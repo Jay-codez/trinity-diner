@@ -1,117 +1,10 @@
-<!DOCTYPE html>
-<html lang="zxx">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Trinity Diner - Food Ordering, Delivery & Restuarant</title>
-    <!--fivicon icon-->
-    <link rel="icon" href="assets/img/fevicon.png">
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/magnific.min.css">
-    <link rel="stylesheet" href="assets/css/nice-select.min.css">
-    <link rel="stylesheet" href="assets/css/owl.min.css">
-    <link rel="stylesheet" href="assets/css/slick-slide.min.css">
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-    <link rel="stylesheet" href="assets/css/remixicon/remixicon.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-
-    <!--Google Fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&family=Bebas+Neue&family=Satisfy&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
-
-
-</head>
-<body class='sc5'>
-    <!-- preloader area start -->
-    <div class="preloader" id="preloader">
-        <div class="preloader-inner">
-            <div id="wave1">
-            </div>
-            <div class="spinner">
-                <div class="dot1"></div>
-                <div class="dot2"></div>
-            </div>
-        </div>
-    </div>
-    <!-- preloader area end -->
-    <!-- search popup area start -->
-    <div class="body-overlay" id="body-overlay"></div>
-    <div class="td-search-popup" id="td-search-popup">
-        <form action="index.html" class="search-form">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search.....">
-            </div>
-            <button type="submit" class="submit-btn"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
-    <!-- //. search Popup -->
-
-    <!-- navbar start -->
-    <header class="navbar-area">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container nav-container">
-                <div class="responsive-mobile-menu">
-                    <button class="menu toggle-btn d-block d-lg-none" data-target="#themefie_main_menu" 
-                    aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="icon-left"></span>
-                        <span class="icon-right"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="themefie_main_menu">
-                    <ul class="navbar-nav menu-open">
-                        <li>
-                            <a href="home-1.html">HOME</a>
-                        </li>
-                        <li>
-                            <a href="menu.html">MENU</a>
-                        </li>
-                        <li>
-                            <a href="about.html">ABOUT US</a>
-                        </li>
-                        <li>
-                            <a href="contact.html">CONTACTS</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="logo">
-                    <a class="main-logo" href="home-1.html"><img src="assets/img/trinity_logo.png" alt="img"></a>
-                </div>
-                <div class="nav-right-part nav-right-part-mobile">
-                    <ul>
-                        <li><a class="search" href="#"><i class="ri-search-line"></i></a>
-                        </li>
-                        <li class="phone-contact d-md-block d-none"><i class="ri-phone-fill float-start"></i>
-                            +997 509 153 849
-                        </li>
-                        <li class="menu-cart"><a href="cart.html">CART <span>1</span></a></li>
-                        <li>49.50 $</li>
-                    </ul>
-                </div>
-                <div class="nav-right-part nav-right-part-desktop">                    
-                    <ul>
-                        <li><a class="search" href="#"><i class="ri-search-line"></i></a>
-                        </li>
-                        <li class="phone-contact"><i class="ri-phone-fill float-start"></i>
-                            +997 509 153 849
-                        </li>
-                        <li class="menu-cart"><a href="cart.html">CART <span>1</span></a></li>
-                        <li>49.50 $</li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <!-- navbar end -->
+<%- include("./partials/header"); -%> 
 
     <!-- bredcrumb Area Start-->
     <section class="breadcrumb-area">
         <div class="banner-bg-img"></div>
-        <div class="banner-shape-1"><img src="assets/img/banner/shape-1.png" alt="img"></div>
-        <div class="banner-shape-2"><img src="assets/img/banner/shape-2.png" alt="img"></div>
+        <div class="banner-shape-1"><img src="/img/banner/shape-1.png" alt="img"></div>
+        <div class="banner-shape-2"><img src="/img/banner/shape-2.png" alt="img"></div>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 align-self-center">
@@ -138,16 +31,16 @@
             <div class="row justify-content-center">
                 <div class="col-lg-12 align-self-center">
                     <ul class="category-menu">
-                        <li class="category-wrap"><a href="menu.html#"><img src="assets/img/category/1.png" alt="category">Ramen</a>
+                        <li class="category-wrap"><a href="menu.html#"><img src="/img/category/1.png" alt="category">Ramen</a>
                             
                         </li>
-                        <li class="category-wrap"><a href="#"><img src="assets/img/category/2.png" alt="category">Pizza</a>
+                        <li class="category-wrap"><a href="#"><img src="/img/category/2.png" alt="category">Pizza</a>
                             <div class="category-sub-menu">
                                 <div class="row">
                                     <div class="col-md-3 col-6">
                                         <div class="single-item-wrap text-center">
                                             <div class="thumb">
-                                                <img src="assets/img/product/pizza/1.png" alt="img">
+                                                <img src="/img/product/pizza/1.png" alt="img">
                                             </div>
                                             <div class="wrap-details">
                                                 <h6><a href="menu.html#">Margherita Pizza</a></h6>                          
@@ -157,7 +50,7 @@
                                     <div class="col-md-3 col-6">
                                         <div class="single-item-wrap text-center">
                                             <div class="thumb">
-                                                <img src="assets/img/product/pizza/2.png" alt="img">
+                                                <img src="/img/product/pizza/2.png" alt="img">
                                             </div>
                                             <div class="wrap-details">
                                                 <h6><a href="menu.html#">Maxican Pizza Test Better</a></h6>                          
@@ -167,7 +60,7 @@
                                     <div class="col-md-3 col-6">
                                         <div class="single-item-wrap text-center">
                                             <div class="thumb">
-                                                <img src="assets/img/product/pizza/3.png" alt="img">
+                                                <img src="/img/product/pizza/3.png" alt="img">
                                             </div>
                                             <div class="wrap-details">
                                                 <h6><a href="menu.html#">Margherita Pizza</a></h6>                          
@@ -175,18 +68,18 @@
                                         </div>
                                     </div>
                                     <div class="col-md-3 col-6">
-                                        <a href="#"><img src="assets/img/ad.png" alt="img"></a>
+                                        <a href="#"><img src="/img/ad.png" alt="img"></a>
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        <li class="category-wrap"><a href="#"><img src="assets/img/category/3.png" alt="category">Burger</a>
+                        <li class="category-wrap"><a href="#"><img src="/img/category/3.png" alt="category">Burger</a>
                             <div class="category-sub-menu">
                                 <div class="row">
                                     <div class="col-md-3 col-6">
                                         <div class="single-item-wrap text-center">
                                             <div class="thumb">
-                                                <img src="assets/img/product/burger/1.png" alt="img">
+                                                <img src="/img/product/burger/1.png" alt="img">
                                             </div>
                                             <div class="wrap-details">
                                                 <h6><a href="menu.html#">Patty Buns Burgers</a></h6>                          
@@ -196,7 +89,7 @@
                                     <div class="col-md-3 col-6">
                                         <div class="single-item-wrap text-center">
                                             <div class="thumb">
-                                                <img src="assets/img/product/burger/1.png" alt="img">
+                                                <img src="/img/product/burger/1.png" alt="img">
                                             </div>
                                             <div class="wrap-details">
                                                 <h6><a href="menu.html#">Maxican Pizza Test Better</a></h6>                          
@@ -206,7 +99,7 @@
                                     <div class="col-md-3 col-6">
                                         <div class="single-item-wrap text-center">
                                             <div class="thumb">
-                                                <img src="assets/img/product/burger/1.png" alt="img">
+                                                <img src="/img/product/burger/1.png" alt="img">
                                             </div>
                                             <div class="wrap-details">
                                                 <h6><a href="menu.html#">Margherita Pizza</a></h6>                          
@@ -214,18 +107,18 @@
                                         </div>
                                     </div>
                                     <div class="col-md-3 col-6">
-                                        <a href="#"><img src="assets/img/ad.png" alt="img"></a>
+                                        <a href="#"><img src="/img/ad.png" alt="img"></a>
                                     </div>
                                 </div>
                             </div>                            
                         </li>
-                        <li class="category-wrap"><a href="menu.html#"><img src="assets/img/category/4.png" alt="category">French fries</a>
+                        <li class="category-wrap"><a href="menu.html#"><img src="/img/category/4.png" alt="category">French fries</a>
                             
                         </li>
-                        <li class="category-wrap"><a href="menu.html#"><img src="assets/img/category/5.png" alt="category">Fast food</a>
+                        <li class="category-wrap"><a href="menu.html#"><img src="/img/category/5.png" alt="category">Fast food</a>
                             
                         </li>
-                        <li class="category-wrap"><a href="menu.html#"><img src="assets/img/category/6.png" alt="category">Soft drinks</a>
+                        <li class="category-wrap"><a href="menu.html#"><img src="/img/category/6.png" alt="category">Soft drinks</a>
                             
                         </li>
                     </ul>
@@ -242,7 +135,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-item-wrap">
                         <div class="thumb">
-                            <img src="assets/img/product/pizza/1.png" alt="img">
+                            <img src="/img/product/pizza/1.png" alt="img">
                             <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
                         </div>
                         <div class="wrap-details">
@@ -270,7 +163,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-item-wrap">
                         <div class="thumb">
-                            <img src="assets/img/product/pizza/2.png" alt="img">
+                            <img src="/img/product/pizza/2.png" alt="img">
                             <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
                         </div>
                         <div class="wrap-details">
@@ -298,7 +191,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-item-wrap">
                         <div class="thumb">
-                            <img src="assets/img/product/pizza/3.png" alt="img">
+                            <img src="/img/product/pizza/3.png" alt="img">
                             <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
                         </div>
                         <div class="wrap-details">
@@ -326,7 +219,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-item-wrap">
                         <div class="thumb">
-                            <img src="assets/img/product/pizza/4.png" alt="img">
+                            <img src="/img/product/pizza/4.png" alt="img">
                             <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
                         </div>
                         <div class="wrap-details">
@@ -354,7 +247,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-item-wrap">
                         <div class="thumb">
-                            <img src="assets/img/product/pizza/5.png" alt="img">
+                            <img src="/img/product/pizza/5.png" alt="img">
                             <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
                         </div>
                         <div class="wrap-details">
@@ -382,7 +275,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-item-wrap">
                         <div class="thumb">
-                            <img src="assets/img/product/pizza/6.png" alt="img">
+                            <img src="/img/product/pizza/6.png" alt="img">
                             <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
                         </div>
                         <div class="wrap-details">
@@ -410,7 +303,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-item-wrap">
                         <div class="thumb">
-                            <img src="assets/img/product/burger/1.png" alt="img">
+                            <img src="/img/product/burger/1.png" alt="img">
                             <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
                         </div>
                         <div class="wrap-details">
@@ -438,7 +331,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-item-wrap">
                         <div class="thumb">
-                            <img src="assets/img/product/burger/2.png" alt="img">
+                            <img src="/img/product/burger/2.png" alt="img">
                             <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
                         </div>
                         <div class="wrap-details">
@@ -466,7 +359,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-item-wrap">
                         <div class="thumb">
-                            <img src="assets/img/product/burger/1.png" alt="img">
+                            <img src="/img/product/burger/1.png" alt="img">
                             <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
                         </div>
                         <div class="wrap-details">
@@ -523,23 +416,23 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="footer-widget widget">
                             <div class="logo">
-                                <img src="assets/img/logo.png" alt="img">
+                                <img src="/img/logo.png" alt="img">
                             </div>
                             <ul class="contact_info_list">
                                 <li class="single-info-item">
-                                    <img src="assets/img/icon/location.png" alt="icon">
+                                    <img src="/img/icon/location.png" alt="icon">
                                     <div class="details">
                                         4920 Trails End Road Ft  United States, FL 33311
                                     </div>
                                 </li>
                                 <li class="single-info-item">
-                                    <img src="assets/img/icon/envelope.png" alt="icon">
+                                    <img src="/img/icon/envelope.png" alt="icon">
                                     <div class="details">
                                         ordernow@foodka.com
                                     </div>
                                 </li>
                                 <li class="single-info-item">
-                                    <img src="assets/img/icon/phone.png" alt="icon">
+                                    <img src="/img/icon/phone.png" alt="icon">
                                     <div class="details">
                                         +997 509 153 849
                                     </div>
@@ -577,12 +470,12 @@
                         <div class="footer-widget widget widget_instagram_feeds">
                             <h4 class="widget-title">Instagram Feeds</h4>
                             <ul>
-                                <li><a href="#"><img src="assets/img/instagram/1.png" alt="instagram" /></a></li>
-                                <li><a href="#"><img src="assets/img/instagram/2.png" alt="instagram" /></a></li>
-                                <li><a href="#"><img src="assets/img/instagram/3.png" alt="instagram" /></a></li>
-                                <li><a href="#"><img src="assets/img/instagram/4.png" alt="instagram" /></a></li>
-                                <li><a href="#"><img src="assets/img/instagram/5.png" alt="instagram" /></a></li>
-                                <li><a href="#"><img src="assets/img/instagram/6.png" alt="instagram" /></a></li>
+                                <li><a href="#"><img src="/img/instagram/1.png" alt="instagram" /></a></li>
+                                <li><a href="#"><img src="/img/instagram/2.png" alt="instagram" /></a></li>
+                                <li><a href="#"><img src="/img/instagram/3.png" alt="instagram" /></a></li>
+                                <li><a href="#"><img src="/img/instagram/4.png" alt="instagram" /></a></li>
+                                <li><a href="#"><img src="/img/instagram/5.png" alt="instagram" /></a></li>
+                                <li><a href="#"><img src="/img/instagram/6.png" alt="instagram" /></a></li>
                             </ul>
                         </div>
                     </div>
@@ -619,21 +512,21 @@
     
 
     <!-- all plugins here -->
-    <script src="assets/js/jquery.3.6.min.js"></script>
-    <script src="assets/js/jquery-ui.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/imageloded.min.js"></script>
-    <script src="assets/js/counterup.js"></script>
-    <script src="assets/js/waypoint.js"></script>
-    <script src="assets/js/magnific.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/nice-select.min.js"></script>
-    <script src="assets/js/fontawesome.min.js"></script>
-    <script src="assets/js/owl.min.js"></script>
-    <script src="assets/js/slick-slider.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/tweenmax.min.js"></script>
+    <script src="/js/jquery.3.6.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/imageloded.min.js"></script>
+    <script src="/js/counterup.js"></script>
+    <script src="/js/waypoint.js"></script>
+    <script src="/js/magnific.min.js"></script>
+    <script src="/js/isotope.pkgd.min.js"></script>
+    <script src="/js/nice-select.min.js"></script>
+    <script src="/js/fontawesome.min.js"></script>
+    <script src="/js/owl.min.js"></script>
+    <script src="/js/slick-slider.min.js"></script>
+    <script src="/js/wow.min.js"></script>
+    <script src="/js/tweenmax.min.js"></script>
     <!-- main js  -->
-    <script src="assets/js/main.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>
