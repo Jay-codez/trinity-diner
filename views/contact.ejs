@@ -54,21 +54,21 @@
                     <p>We’re an award-winning creative design studio with a small team and big ideas. We pour passion into projects big and small, providing our expert clients with solutions.</p>
                 </div>
                 <div class="col-lg-6">
-                    <form class="default-form-wrap border-0 p-0 mt-4 mt-lg-0">
+                    <form  method="POST" action="/contact" class="default-form-wrap border-0 p-0 mt-4 mt-lg-0" name="contact-form">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="single-input-wrap">
-                                    <input type="text" class="form-control" placeholder="Your Name">
+                                    <input type="text" class="form-control" placeholder="Your Name" name="name">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="single-input-wrap">
-                                    <input type="text" class="form-control" placeholder="Your Email">
+                                    <input type="email" class="form-control" placeholder="Your Email" name="email">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="single-textarea-wrap">
-                                    <textarea rows="4" placeholder="Message..."></textarea>
+                                    <textarea rows="4" placeholder="Message..." name="message"></textarea>
                                 </div>
                             </div>
                         </div>

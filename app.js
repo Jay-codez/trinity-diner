@@ -1,13 +1,20 @@
 const express = require("express");
+const bodyParser = require("body-parser")
 const path = require("path")
+const connectDb = require("./db/connect-db")
 const app = express();
 
-app.use(express.json());
 
-
-
+const contactRouter = require("./routes/contact")
 const PORT = 3000;
 
+
+app.use(bodyParser.json());
+app.use(
+  bodyParser.urlencoded({
+    extended:true
+  })
+)
 app.set("view engine","ejs")
 app.use("/",express.static(path.join(__dirname,"assets")))
 
@@ -24,10 +31,6 @@ app.get("/menu", (req, res) => {
 });
 
 
-app.get("/contact", (req, res) => {
-  res.render("contact");
-});
-
 app.get("/fooditem/:id", (req, res) => {
   
 
@@ -38,8 +41,21 @@ app.get("/fooditem/:id", (req, res) => {
 
 });
 
+app.use(contactRouter)
 
 
-app.listen(PORT, () => {
-  console.log(`Server is running port ${PORT}`);
-});
+
+const start = async ()=>{
+    try {
+      await connectDb()
+      app.listen(PORT, () => {
+        console.log(`Server is running port ${PORT}`);
+      });
+      
+    } catch (error) {
+      console.log(error);
+    }
+}
+
+
+start()
