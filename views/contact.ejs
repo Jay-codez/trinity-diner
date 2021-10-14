@@ -1,5 +1,5 @@
-<%- include("./partials/header"); -%> 
-
+<%- include("./partials/head.ejs") %>
+<%- include("./partials/nav.ejs") %>
 
     <!-- bredcrumb Area Start-->
     <section class="breadcrumb-area">
@@ -15,7 +15,7 @@
                         <h1>Contact</h1>
                         <nav aria-label="breadcrumb">
                             <ul class="breadcrumb">
-                              <li class="breadcrumb-item"><a href="home.html">Home</a></li>
+                              <li class="breadcrumb-item"><a href="/">Home</a></li>
                               <li class="breadcrumb-item active" aria-current="page">Contact</li>
                             </ul>
                         </nav>
@@ -35,23 +35,24 @@
                         <li class="single-info-item">
                             <img src="/img/icon/location.png" alt="icon">
                             <div class="details">
-                                4920 Trails End Road Ft  United States, FL 33311
+                                7255 Dixie Hwy Ste. D, Fairfield, OH 45014
                             </div>
                         </li>
                         <li class="single-info-item">
                             <img src="/img/icon/envelope.png" alt="icon">
                             <div class="details">
-                                ordernow@foodka.com
+                                ordernow@trinitydiner.com
                             </div>
                         </li>
                         <li class="single-info-item">
                             <img src="/img/icon/phone.png" alt="icon">
                             <div class="details">
-                                +997 509 153 849
+                                (513) 426-8634
                             </div>
                         </li>
                     </ul>
-                    <p>We’re an award-winning creative design studio with a small team and big ideas. We pour passion into projects big and small, providing our expert clients with solutions.</p>
+                    <p>Nunc quam nibh diam in eget. Tortor amet, eleifend sed viverra ac eu porta netus pulvinar. Quis sem donec pharetra 
+                        viverra consectetur aliquam, platea egestas. Egestas quis fringilla cursus nullam. Nisl vulputate aliquam odio massa mattis.</p>
                 </div>
                 <div class="col-lg-6">
                     <form  method="POST" action="/contact" class="default-form-wrap border-0 p-0 mt-4 mt-lg-0" name="contact-form">
@@ -86,101 +87,7 @@
         </div>
     </div>
 
-    <!-- footer area start -->
-    <footer class="footer-area pd-top-100">
-        <div class="footer-inner padding-top-100 padding-bottom-65">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer-widget widget">
-                            <div class="logo">
-                                <img src="/img/logo.png" alt="img">
-                            </div>
-                            <ul class="contact_info_list">
-                                <li class="single-info-item">
-                                    <img src="/img/icon/location.png" alt="icon">
-                                    <div class="details">
-                                        4920 Trails End Road Ft  United States, FL 33311
-                                    </div>
-                                </li>
-                                <li class="single-info-item">
-                                    <img src="/img/icon/envelope.png" alt="icon">
-                                    <div class="details">
-                                        ordernow@foodka.com
-                                    </div>
-                                </li>
-                                <li class="single-info-item">
-                                    <img src="/img/icon/phone.png" alt="icon">
-                                    <div class="details">
-                                        +997 509 153 849
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer-widget widget widget_link">
-                            <h4 class="widget-title">Hot Menu</h4>
-                            <ul>
-                                <li><a href="menu-list.html">Burger King Whopper</a></li>
-                                <li><a href="menu-list.html">Five Guys Cheeseburger</a></li>
-                                <li><a href="menu-list.html">KFC Original Recipe Chicken</a></li>
-                                <li><a href="menu-list.html">Wendy's Frosty</a></li>
-                                <li><a href="menu-list.html">McDonald's Happy Meal</a></li>
-                                <li><a href="menu-list.html">Domino's Pepperoni Pizza</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer-widget widget widget_link">
-                            <h4 class="widget-title">Opening Hours</h4>
-                            <ul>
-                                <li>Monday : 09.00am-10.00pm</li>
-                                <li>Tuesday : 09.00am-10.00pm</li>
-                                <li>Wednesday : 09.00am-10.00pm</li>
-                                <li>Thursday : 09.00am-10.00pm</li>
-                                <li>Friday  : 09.00am-10.00pm</li>
-                                <li>Saturday & Sunday : <span>Closed</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer-widget widget widget_instagram_feeds">
-                            <h4 class="widget-title">Instagram Feeds</h4>
-                            <ul>
-                                <li><a href="#"><img src="/img/instagram/1.png" alt="instagram" /></a></li>
-                                <li><a href="#"><img src="/img/instagram/2.png" alt="instagram" /></a></li>
-                                <li><a href="#"><img src="/img/instagram/3.png" alt="instagram" /></a></li>
-                                <li><a href="#"><img src="/img/instagram/4.png" alt="instagram" /></a></li>
-                                <li><a href="#"><img src="/img/instagram/5.png" alt="instagram" /></a></li>
-                                <li><a href="#"><img src="/img/instagram/6.png" alt="instagram" /></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-6 text-md-start text-center">
-                        <div class="copyright-area">
-                            <p>© 2021 Foodka. All Rights Reserved by Themefie</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="social-area text-md-end text-center mt-md-0 mt-2">
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li> 
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li> 
-                            <li><a href="#"><i class="fab fa-behance"></i></a></li> 
-                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li> 
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- footer area end -->    
+    <%- include("./partials/footer.ejs") %>   
 
     <!-- back-to-top end -->
     <div class="back-to-top">
