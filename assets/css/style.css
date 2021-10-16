@@ -6027,3 +6027,7 @@ ul.side-navbar-items li a:hover {
 .home-3 .widget_link ul li span {
   color: var(--main-color);
 }
+
+.signin-btn {
+  padding-top: 30px;
+}

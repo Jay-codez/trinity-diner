@@ -19,7 +19,7 @@ const start = async ()=>{
   try {
     await connectDb()
     app.listen(PORT, () => {
-      console.log(`Server is running port ${PORT}`);
+      console.log(`Server is running port ${PORT}...`);
     });
     
   } catch (error) {
@@ -51,6 +51,13 @@ app.get("/menu", (req, res) => {
   res.render("menu", { title: "Menu" });
 });
 
+app.get("/contact", (req, res) => {
+  res.render("contact", { title: "Contact" });
+});
+
+app.get("/signin", (req, res) => {
+  res.render("signin", { title: "Sign In" });
+});
 
 app.get("/accounts/signup", (req, res) => {
   res.render("signup");
@@ -58,7 +65,7 @@ app.get("/accounts/signup", (req, res) => {
 
 
 
-app.get("/signin", (req, res) => {
+/* app.get("/signin", (req, res) => {
   const signin = new Signin({
     email: "new@email.com",
     password: "password1"
@@ -66,7 +73,7 @@ app.get("/signin", (req, res) => {
 
   signin.save()
 });
-
+ */
 
 
 app.post("/add-account", (req, res) => {
