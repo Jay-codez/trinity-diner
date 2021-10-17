@@ -26,7 +26,7 @@ const start = async ()=>{
     console.log(error);
   }
 }
-start()
+
 
 
 app.use(bodyParser.json());
@@ -61,6 +61,14 @@ app.get("/signin", (req, res) => {
 
 app.get("/accounts/signup", (req, res) => {
   res.render("signup");
+});
+
+app.get("/signup", (req, res) => {
+  res.render("signup", { title: "Sign Up" });
+});
+
+app.get("/cart", (req, res) => {
+  res.render("cart", { title: "Sign Up" });
 });
 
 
@@ -144,3 +152,4 @@ app.use(contactRouter)
 
 
 
+start()
