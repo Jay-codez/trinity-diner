@@ -1,0 +1,125 @@
+<%- include("./partials/head.ejs") %> <%- include("./partials/nav.ejs") %>
+
+<!-- bredcrumb Area Start-->
+<section class="breadcrumb-area">
+  <div class="banner-bg-img"></div>
+  <div class="banner-shape-1">
+    <img src="/img/banner/shape-1.png" alt="img" />
+  </div>
+  <div class="banner-shape-2">
+    <img src="/img/banner/shape-2.png" alt="img" />
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 align-self-center">
+        <div class="banner-inner text-center">
+          <h3>Sign In</h3>
+          <h1>Sign in to your account to enjoy more!</h1>
+          <nav aria-label="breadcrumb">
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Sign In
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- bredcrumb Area End -->
+
+<div class="contact-area pd-top-120 pd-bottom-100">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <ul class="contact_info_list">
+          <li class="single-info-item">
+            <img src="/img/icon/location.png" alt="icon" />
+            <div class="details">
+              7255 Dixie Hwy Ste. D, Fairfield, OH 45014
+            </div>
+          </li>
+          <li class="single-info-item">
+            <img src="/img/icon/envelope.png" alt="icon" />
+            <div class="details">trinitydinerr@gmail.com</div>
+          </li>
+          <li class="single-info-item">
+            <img src="/img/icon/phone.png" alt="icon" />
+            <div class="details">(513) 426-8634</div>
+          </li>
+        </ul>
+        <p>
+          Nunc quam nibh diam in eget. Tortor amet, eleifend sed viverra ac eu
+          porta netus pulvinar. Quis sem donec pharetra viverra consectetur
+          aliquam, platea egestas. Egestas quis fringilla cursus nullam. Nisl
+          vulputate aliquam odio massa mattis.
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <form
+          method="POST"
+          action="/signin"
+          class="default-form-wrap border-0 p-0 mt-4 mt-lg-0"
+          name="contact-form"
+        >
+          <div class="row">
+            <div class="col-md-6">
+              <div class="single-input-wrap">
+                <label for="email">Email:</label>
+                <input
+                  type="text"
+                  id="email"
+                  class="form-control"
+                  name="email"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="single-input-wrap">
+                <label for="email">Password:</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  name="password"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="signin-signup-btn">
+            <button type="submit" class="btn btn-base">Sign In</button>
+          </div>
+          <a href="/signup">Don't have an account? Create an account</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("./partials/footer.ejs") %>
+
+<!-- back-to-top end -->
+<div class="back-to-top">
+  <span class="back-top"><i class="fas fa-angle-double-up"></i></span>
+</div>
+
+<!-- all plugins here -->
+<script src="/js/jquery.3.6.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/imageloded.min.js"></script>
+<script src="/js/counterup.js"></script>
+<script src="/js/waypoint.js"></script>
+<script src="/js/magnific.min.js"></script>
+<script src="/js/isotope.pkgd.min.js"></script>
+<script src="/js/jquery-ui.min.js"></script>
+<script src="/js/nice-select.min.js"></script>
+<script src="/js/fontawesome.min.js"></script>
+<script src="/js/owl.min.js"></script>
+<script src="/js/slick-slider.min.js"></script>
+<script src="/js/wow.min.js"></script>
+<script src="/js/tweenmax.min.js"></script>
+<!-- main js  -->
+<script src="/js/main.js"></script>
