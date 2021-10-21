@@ -802,10 +802,12 @@ ul {
   font-family: var(--satisfy-font);
   font-weight: 400;
   margin-bottom: 10px;
+  padding-top: 40px;
 }
 .section-title .title {
   font-size: 42px;
   font-weight: 600;
+  padding-top: 40px;
 }
 .section-title p {
   margin-top: 28px;
