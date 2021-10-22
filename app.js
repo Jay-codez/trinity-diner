@@ -1,43 +1,43 @@
 const express = require("express");
-const bodyParser = require("body-parser")
-const path = require("path")
-const connectDb = require("./db/connect-db")
-
-const Signin = require("./models/signin")
-const Account = require("./models/account")
-const Order = require("./models/order")
+const bodyParser = require("body-parser");
+const path = require("path");
+const connectDb = require("./db/connect-db");
+const passport = require("passport")
+const passportLocal = require("passport-local").Strategy
+const session = require("cookie-session")
+const User = require("./models/user")
 
 const app = express();
 
-
 const contactRouter = require("./routes/contact");
-
-const { render } = require("ejs");
+const userRouter = require("./routes/user");
 
 const PORT = 3000;
-const start = async ()=>{
-  try {
-    await connectDb()
-    app.listen(PORT, () => {
-      console.log(`Server is running port ${PORT}...`);
-    });
-    
-  } catch (error) {
-    console.log(error);
-  }
-}
+
+app.use(
+  session({
+    maxAge:30*24*60*60*1000,
+    keys:["jaystro"]
+  })
+)
 
 
 
 app.use(bodyParser.json());
 app.use(
   bodyParser.urlencoded({
-    extended:true
+    extended: true,
   })
-)
-app.set("view engine","ejs")
-app.use("/", express.static("assets"))
+);
+app.set("view engine", "ejs");
+app.use("/", express.static("assets"));
 app.use(express.urlencoded({ extended: true }));
+app.use(passport.initialize())
+app.use(passport.session())
+passport.use(new passportLocal(User.authenticate()))
+passport.serializeUser(User.serializeUser())
+passport.deserializeUser(User.deserializeUser())
+
 
 app.get("/", (req, res) => {
   res.render("index", { title: "Home" });
@@ -51,27 +51,9 @@ app.get("/menu", (req, res) => {
   res.render("menu", { title: "Menu" });
 });
 
-app.get("/contact", (req, res) => {
-  res.render("contact", { title: "Contact" });
-});
-
-app.get("/signin", (req, res) => {
-  res.render("signin", { title: "Sign In" });
-});
-
-app.get("/accounts/signup", (req, res) => {
-  res.render("signup");
-});
-
-app.get("/signup", (req, res) => {
-  res.render("signup", { title: "Sign Up" });
-});
-
 app.get("/cart", (req, res) => {
   res.render("cart", { title: "Sign Up" });
 });
-
-
 
 /* app.get("/signin", (req, res) => {
   const signin = new Signin({
@@ -83,73 +65,71 @@ app.get("/cart", (req, res) => {
 });
  */
 
+// app.post("/add-account", (req, res) => {
+//   const account = new Account(req.body);
 
-app.post("/add-account", (req, res) => {
-  const account = new Account(req.body);
+//   account.save()
+//     .then((result) => {
+//       res.render("/signin");
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     })
+// });
 
-  account.save()
-    .then((result) => {
-      res.render("/signin");
-    })
-    .catch((err) => {
-      console.log(err);
-    })
-});
+// //const acc_id = req.params.id;
 
-//const acc_id = req.params.id;
+// app.get("/find-account", (req, res) => {
+//   const id = req.params.id;
+//   Signup.findById(id)
+//     .then(result => {
+//       res.render("account", { signup: result, email: "new@email.com" });
+//     })
+//     .catch(err => {
+//       console.log(err);
+//   })
+// })
 
-app.get("/find-account", (req, res) => {
-  const id = req.params.id;
-  Signup.findById(id)
-    .then(result => {
-      res.render("account", { signup: result, email: "new@email.com" });
-    })
-    .catch(err => {
-      console.log(err);
-  })
-})
-
-app.get("/:id", (req, res) => {
-  const id = req.params.id;
-  Signup.findById(id)
-    .then(result => {
-      res.render("account", { signup: result, email: "new@email.com" });
-    })
-    .catch(err => {
-      console.log(err);
-  })
-})
-
-
-app.get("/orders", (req, res) => {
-  Order.find()
-    .then((result) => {
-    res.render("index", {title: "Orders", orders: result})
-    })
-    .catch((err) => {
-    console.log(err)
-  })
-});
+// app.get("/orders", (req, res) => {
+//   Order.find()
+//     .then((result) => {
+//     res.render("index", {title: "Orders", orders: result})
+//     })
+//     .catch((err) => {
+//     console.log(err)
+//   })
+// });
 
 app.get("/orders/create", (req, res) => {
-  res.render("orders", {title: "New order"});
+  res.render("orders", { title: "New order" });
 });
-
-
 
 app.get("/fooditem/:id", (req, res) => {
-  
+  console.log(req.params);
 
-  console.log(req.params)
-  
   res.render("fooditem");
-
-
 });
 
-app.use(contactRouter)
+app.use((req, res, next) => {
+  res.locals.current_user = req.user;
+
+  next();
+});
+
+app.use(userRouter);
+app.use(contactRouter);
 
 
 
+const start = async () => {
+  try {
+    await connectDb();
+    app.listen(PORT, () => {
+      console.log(`Server is running port ${PORT}...`);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-start()
+start();
