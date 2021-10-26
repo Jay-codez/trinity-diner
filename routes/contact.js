@@ -6,7 +6,7 @@ router.get("/contact",(req,res)=>{
  }) 
  
  
- router.post("/contact",async (req,res)=>{
+router.post("/contact",async (req,res)=>{
 try {
    const data = req.body;
 

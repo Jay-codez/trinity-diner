@@ -11,6 +11,8 @@ const app = express();
 
 const contactRouter = require("./routes/contact");
 const userRouter = require("./routes/user");
+const adminRouter = require("./routes/admin");
+const shopRouter = require("./routes/shop");
 
 const PORT = 3000;
 
@@ -38,10 +40,6 @@ passport.use(new passportLocal(User.authenticate()))
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
 
-
-app.get("/", (req, res) => {
-  res.render("index", { title: "Home" });
-});
 
 app.get("/about", (req, res) => {
   res.render("about", { title: "About Us" });
@@ -100,7 +98,7 @@ app.get("/cart", (req, res) => {
 //   })
 // });
 
-app.get("/orders/create", (req, res) => {
+/* app.get("/orders/create", (req, res) => {
   res.render("orders", { title: "New order" });
 });
 
@@ -108,7 +106,7 @@ app.get("/fooditem/:id", (req, res) => {
   console.log(req.params);
 
   res.render("fooditem");
-});
+}); */
 
 app.use((req, res, next) => {
   res.locals.current_user = req.user;
@@ -118,6 +116,16 @@ app.use((req, res, next) => {
 
 app.use(userRouter);
 app.use(contactRouter);
+app.use("/admin", adminRouter);
+app.use(shopRouter);
+
+app.use((req, res) => {
+  res.status(404).send("<h1>404 page</h1>")
+});
+
+app.get("/", (req, res) => {
+  res.render("index", { title: "Home" });
+});
 
 
 
