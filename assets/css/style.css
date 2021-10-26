@@ -42,7 +42,7 @@ Version: 1.0.0
 :root {
   --body-font-size: 16px;
   --line-height30: 1.8;
-  --main-color: rgb(206, 40, 41);
+  --main-color: #4c2716; /* #4c2716 trinity color original color rgb(206, 40, 41)*/
   --secondary-color: #fdc913;
   --main-color-opacity: 206, 40, 41;
   --body-font: "Barlow", sans-serif;
@@ -1432,7 +1432,7 @@ ul {
   width: 100%;
   height: 100%;
   display: block;
-  background: rgba(206, 40, 41, 0.95);
+  background: #4c2716; /*rgba(206, 40, 41, 0.95) #4c2716 */
   z-index: 999;
   content: "";
   left: 0;
@@ -1860,7 +1860,7 @@ ul.side-navbar-items li a:hover {
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
   background: var(--main-color);
-  border-bottom: 1px solid #c20608;
+  border-bottom: 1px solid #ffffff; /*#c20608 #4c2716*/
   -webkit-box-shadow: 0 9px 150px -30px rgba(0, 0, 0, 0.09);
   box-shadow: 0 9px 150px -30px rgba(0, 0, 0, 0.09);
 }
@@ -3626,7 +3626,7 @@ ul.side-navbar-items li a:hover {
   -webkit-box-shadow: 0px 4px 6px 0px rgba(12, 0, 46, 0.05);
   box-shadow: 0px 4px 6px 0px rgba(12, 0, 46, 0.05);
   top: 0;
-  background: rgba(206, 40, 41, 0.8);
+  background: #4c2716; /*rgba(206, 40, 41, 0.8) #4c2716*/
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
