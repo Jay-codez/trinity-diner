@@ -1,0 +1,77 @@
+<%- include("./partials/head.ejs") %>
+
+<!-- bredcrumb Area Start-->
+<section class="breadcrumb-area">
+  <div class="banner-bg-img"></div>
+  <div class="banner-shape-1">
+    <img src="/img/banner/shape-1.png" alt="img" />
+  </div>
+  <div class="banner-shape-2">
+    <img src="/img/banner/shape-2.png" alt="img" />
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 align-self-center">
+        <div class="banner-inner text-center">
+          <h3>ADMIN</h3>
+          <h1>Sign in to your admin account</h1>
+          <nav aria-label="breadcrumb">
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Admin Sign In
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- bredcrumb Area End -->
+
+<div class="col-lg-6">
+  <form
+    method="POST"
+    action="/add-product"
+    class="default-form-wrap border-0 p-0 mt-4 mt-lg-0"
+    name="contact-form"
+  >
+    <div class="row">
+      <div class="col-md-6">
+        <div class="single-input-wrap">
+          <label for="product">Product:</label>
+          <input type="text" class="form-control" name="product" required />
+        </div>
+      </div>
+    </div>
+    <div class="signin-signup-btn">
+      <button type="submit" class="btn btn-base">Add Product</button>
+    </div>
+  </form>
+</div>
+
+<%- include("./partials/footer.ejs") %>
+
+<!-- back-to-top end -->
+<div class="back-to-top">
+  <span class="back-top"><i class="fas fa-angle-double-up"></i></span>
+</div>
+
+<!-- all plugins here -->
+<script src="/js/jquery.3.6.min.js"></script>
+<script src="/js/jquery-ui.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/imageloded.min.js"></script>
+<script src="/js/counterup.js"></script>
+<script src="/js/waypoint.js"></script>
+<script src="/js/magnific.min.js"></script>
+<script src="/js/isotope.pkgd.min.js"></script>
+<script src="/js/nice-select.min.js"></script>
+<script src="/js/fontawesome.min.js"></script>
+<script src="/js/owl.min.js"></script>
+<script src="/js/slick-slider.min.js"></script>
+<script src="/js/wow.min.js"></script>
+<script src="/js/tweenmax.min.js"></script>
+<!-- main js  -->
+<script src="/js/main.js"></script>

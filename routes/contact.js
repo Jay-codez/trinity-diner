@@ -2,7 +2,7 @@ const router = require("express").Router();
 const {saveContact} = require("../controllers/contact") 
 
 router.get("/contact",(req,res)=>{
-   res.render("contact")
+   res.render("contact", { title: "Contact Us" })
  }) 
  
  

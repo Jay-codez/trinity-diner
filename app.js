@@ -11,8 +11,6 @@ const app = express();
 
 const contactRouter = require("./routes/contact");
 const userRouter = require("./routes/user");
-const adminRouter = require("./routes/admin");
-const shopRouter = require("./routes/shop");
 
 const PORT = 3000;
 
@@ -40,6 +38,9 @@ passport.use(new passportLocal(User.authenticate()))
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
 
+app.get("/", (req, res) => {
+  res.render("index", { title: "Home" });
+});
 
 app.get("/about", (req, res) => {
   res.render("about", { title: "About Us" });
@@ -49,9 +50,9 @@ app.get("/menu", (req, res) => {
   res.render("menu", { title: "Menu" });
 });
 
-app.get("/cart", (req, res) => {
+/* app.get("/cart", (req, res) => {
   res.render("cart", { title: "Sign Up" });
-});
+}); */
 
 /* app.get("/signin", (req, res) => {
   const signin = new Signin({
@@ -116,17 +117,10 @@ app.use((req, res, next) => {
 
 app.use(userRouter);
 app.use(contactRouter);
-app.use("/admin", adminRouter);
-app.use(shopRouter);
 
-app.use((req, res) => {
+/* app.use((req, res) => {
   res.status(404).send("<h1>404 page</h1>")
-});
-
-app.get("/", (req, res) => {
-  res.render("index", { title: "Home" });
-});
-
+}); */
 
 
 const start = async () => {
