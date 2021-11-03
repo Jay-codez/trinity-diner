@@ -6,7 +6,7 @@ const findOne = (req,res) => {
 
 }
 
-const create = (req,res) => {
+const create = async (req,res) => {
   return await FoodItem.create(req.body)
 }
 

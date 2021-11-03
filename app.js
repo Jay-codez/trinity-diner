@@ -2,15 +2,19 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const connectDb = require("./db/connect-db");
-const passport = require("passport")
+const passport = require("passport");
 const passportLocal = require("passport-local").Strategy
-const session = require("cookie-session")
-const User = require("./models/user")
+const session = require("cookie-session");
+const User = require("./models/user");
+
+const cors = require('cors');
+
 
 const app = express();
 
 const contactRouter = require("./routes/contact");
 const userRouter = require("./routes/user");
+const fooditemRouter = require("./routes/food-item")
 
 const PORT = 3000;
 
@@ -21,6 +25,9 @@ app.use(
   })
 )
 
+app.use(cors({
+  origin: "*"
+}));
 
 
 app.use(bodyParser.json());
@@ -117,6 +124,7 @@ app.use((req, res, next) => {
 
 app.use(userRouter);
 app.use(contactRouter);
+app.use("/food-item",fooditemRouter);
 
 /* app.use((req, res) => {
   res.status(404).send("<h1>404 page</h1>")
@@ -126,7 +134,7 @@ app.use(contactRouter);
 const start = async () => {
   try {
     await connectDb();
-    app.listen(PORT, () => {
+    app.listen(PORT, "0.0.0.0",() => {
       console.log(`Server is running port ${PORT}...`);
     });
   } catch (error) {
