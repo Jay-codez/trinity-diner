@@ -2,8 +2,8 @@ const mongoose = require("mongoose")
 
 const foodItemSchema = new mongoose.Schema({
     name: String,
-    description: String,
-    price: Number,
+  price: Number,
+  description: String,
     featured:{
       type:  Boolean,
       default:false
