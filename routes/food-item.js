@@ -19,6 +19,8 @@ router.get("/:category", async (req, res) => {
 
 
 
+
+
 // Admin Routes
 
 router.get("/api/status", async (req, res) => {
@@ -28,13 +30,10 @@ router.get("/api/status", async (req, res) => {
 
 router.post("/api/new", async (req, res) => {
 
-    console.log("Attempting to create new food item")
-
-    const data = await create(req,res);
+    const data = await create(req, res);
 
     res.status(201).json(data);
 });
-
 
 
 module.exports = router;

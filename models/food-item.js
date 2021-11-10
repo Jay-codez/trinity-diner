@@ -1,18 +1,22 @@
 const mongoose = require("mongoose")
 
 const foodItemSchema = new mongoose.Schema({
-    name: String,
+  name: String,
   price: Number,
   description: String,
-    featured:{
-      type:  Boolean,
-      default:false
-    },
-    category: {
-      enum : ["rice","meat","home-delights","drinks"],
-    
-    },
-    image_urls:[String]
+  img: {
+    data: Buffer,
+    contentType: String
+  },
+  featured:{
+    type:  Boolean,
+    default:false
+  },
+  category: {
+    enum : ["rice","meats","home-delights","drinks"],
+  },
+  //image_urls: [String],
+  
 });
 
 module.exports = mongoose.model("FoodItem",foodItemSchema)

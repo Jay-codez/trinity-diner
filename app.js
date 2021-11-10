@@ -6,6 +6,8 @@ const passport = require("passport");
 const passportLocal = require("passport-local").Strategy
 const session = require("cookie-session");
 const User = require("./models/user");
+const fs = require("fs");
+require("dotenv/config");
 
 const cors = require('cors');
 
