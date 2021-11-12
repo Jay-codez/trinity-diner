@@ -1,0 +1,149 @@
+<%- include("./partials/head.ejs") %>
+<div class="container-scroller">
+  <!-- partial:../../partials/_navbar.html -->
+  <%- include("./partials/nav.ejs") %>
+  <!-- partial -->
+  <div class="container-fluid page-body-wrapper">
+    <!-- partial:../../partials/_sidebar.html -->
+    <%- include("./partials/side.ejs") %>
+    <!-- partial -->
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="row">
+          <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Add Items</h4>
+                <form
+                  method="POST"
+                  action="/add-food-item"
+                  class="default-form-wrap border-0 p-0 mt-4 mt-lg-0"
+                  name="contact-form"
+                  enctype="multipart/form-data"
+                >
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="single-input-wrap">
+                        <label for="name">Item Name:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="name"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="single-input-wrap">
+                        <label for="price">Price:</label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          name="price"
+                          placeholder="$"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="single-input-wrap">
+                        <label for="category">Category:</label>
+                        <select class="form-control" name="category">
+                          <option disabled selected>
+                            -- Select an option --
+                          </option>
+                          <option
+                            value="rice"
+                            type="text"
+                            class="form-control"
+                            name="category"
+                            required
+                          >
+                            Rice
+                          </option>
+                          <option
+                            value="meats"
+                            type="text"
+                            class="form-control"
+                            name="category"
+                            required
+                          >
+                            Meats
+                          </option>
+                          <option
+                            value="home-delights"
+                            type="text"
+                            class="form-control"
+                            name="category"
+                            required
+                          >
+                            Home Delights
+                          </option>
+                          <option
+                            value="drinks"
+                            type="text"
+                            class="form-control"
+                            name="category"
+                            required
+                          >
+                            Drinks
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="single-input-wrap">
+                        <label for="fileupload">Image:</label>
+                        <input
+                          name="fileupload"
+                          type="file"
+                          class="form-control"
+                          value="fileupload"
+                          id="fileupload"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="single-input-wrap">
+                        <label for="description">Description:</label>
+                        <textarea
+                          name="description"
+                          type="text"
+                          class="form-control"
+                          id="exampleTextarea1"
+                          rows="4"
+                        ></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary mr-2">
+                    Submit
+                  </button>
+                  <button class="btn btn-light">Cancel</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- content-wrapper ends -->
+
+      <!-- partial:../../partials/_footer.html -->
+      <%- include("./partials/foot.ejs") %>
+      <!-- partial -->
+    </div>
+    <!-- main-panel ends -->
+  </div>
+  <!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+<!-- plugins:js -->
+<script src="../../vendors/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="../../js/off-canvas.js"></script>
+<script src="../../js/misc.js"></script>
+<!-- endinject -->
