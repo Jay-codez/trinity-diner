@@ -24,7 +24,7 @@ const create = async (req,res) => {
      });
   }
 
-  body.img = fileName
+  body.img = fileName.substring(fileName.indexOf("img") - 1,fileName.length)
 
 
   return await FoodItem.create(body)

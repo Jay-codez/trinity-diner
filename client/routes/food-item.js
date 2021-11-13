@@ -9,6 +9,8 @@ router.get("/", async (req, res) => {
     res.render("food-item", { title: "Item View" ,foodItems:data});
 });
 
+
+
 router.get("/:category", async (req, res) => {
 
     const data = await findByCategory(req,res);

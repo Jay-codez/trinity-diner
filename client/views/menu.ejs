@@ -124,264 +124,16 @@
         aria-labelledby="pills-ramen-tab"
       >
         <div class="row justify-content-center">
+          <%if(foodItems){%> <%foodItems.forEach((foodItem)=>{ %>
           <div class="col-lg-4 col-md-6">
             <div class="single-item-wrap">
               <div class="thumb">
-                <img src="/img/product/fried_rice.png" alt="img" />
-                <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
-              </div>
-              <div class="wrap-details">
-                <h5><a href="/view-item">Fried Rice</a></h5>
-                <div class="wrap-footer">
-                  <div class="rating">
-                    4.9
-                    <span class="rating-inner">
-                      <i class="ri-star-fill ps-0"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-half-line pe-0"></i>
-                    </span>
-                    (200)
-                  </div>
-                  <h6 class="price">$17.00</h6>
-                </div>
-              </div>
-              <div class="btn-area">
-                <a class="btn btn-secondary" href="/view-item"
-                  >CHOOSE OPTIONS
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-item-wrap">
-              <div class="thumb">
-                <img src="/img/product/jollof_rice.png" alt="img" />
-                <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
-              </div>
-              <div class="wrap-details">
-                <h5><a href="/view-item">Jollof Rice</a></h5>
-                <div class="wrap-footer">
-                  <div class="rating">
-                    4.9
-                    <span class="rating-inner">
-                      <i class="ri-star-fill ps-0"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-half-line pe-0"></i>
-                    </span>
-                    (928)
-                  </div>
-                  <h6 class="price">$29.00</h6>
-                </div>
-                <div class="btn-area">
-                  <a class="btn btn-secondary" href="/view-item"
-                    >CHOOSE OPTIONS
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-item-wrap">
-              <div class="thumb">
-                <img src="/img/product/waakye.png" alt="img" />
-                <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
-              </div>
-              <div class="wrap-details">
-                <h5><a href="/view-item">Waakye</a></h5>
-                <div class="wrap-footer">
-                  <div class="rating">
-                    4.9
-                    <span class="rating-inner">
-                      <i class="ri-star-fill ps-0"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-half-line pe-0"></i>
-                    </span>
-                    (462)
-                  </div>
-                  <h6 class="price">$27.00</h6>
-                </div>
-              </div>
-              <div class="btn-area">
-                <a class="btn btn-secondary" href="/view-item"
-                  >CHOOSE OPTIONS
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="tab-pane fade"
-        id="pills-pizza"
-        role="tabpanel"
-        aria-labelledby="pills-pizza-tab"
-      >
-        <div class="row justify-content-center">
-          <div class="col-lg-4 col-md-6">
-            <div class="single-item-wrap">
-              <div class="thumb">
-                <img src="/img/product/grilled_chicken.png" alt="img" />
-                <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
-              </div>
-              <div class="wrap-details">
-                <h5><a href="/view-item">Grilled Chicken</a></h5>
-                <div class="wrap-footer">
-                  <div class="rating">
-                    4.9
-                    <span class="rating-inner">
-                      <i class="ri-star-fill ps-0"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-half-line pe-0"></i>
-                    </span>
-                    (200)
-                  </div>
-                  <h6 class="price">$17.00</h6>
-                </div>
-              </div>
-              <div class="btn-area">
-                <a class="btn btn-secondary" href="/view-item"
-                  >CHOOSE OPTIONS
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-item-wrap">
-              <div class="thumb">
-                <img src="/img/product/fried_fish.png" alt="img" />
-                <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
-              </div>
-              <div class="wrap-details">
-                <h5><a href="/view-item">Fried Fish</a></h5>
-                <div class="wrap-footer">
-                  <div class="rating">
-                    4.9
-                    <span class="rating-inner">
-                      <i class="ri-star-fill ps-0"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-half-line pe-0"></i>
-                    </span>
-                    (928)
-                  </div>
-                  <h6 class="price">$29.00</h6>
-                </div>
-                <div class="btn-area">
-                  <a class="btn btn-secondary" href="/view-item"
-                    >CHOOSE OPTIONS
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-item-wrap">
-              <div class="thumb">
-                <img src="/img/product/fried_goat.png" alt="img" />
-                <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
-              </div>
-              <div class="wrap-details">
-                <h5><a href="/view-item">Fried Goat</a></h5>
-                <div class="wrap-footer">
-                  <div class="rating">
-                    4.9
-                    <span class="rating-inner">
-                      <i class="ri-star-fill ps-0"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-half-line pe-0"></i>
-                    </span>
-                    (462)
-                  </div>
-                  <h6 class="price">$27.00</h6>
-                </div>
-              </div>
-              <div class="btn-area">
-                <a class="btn btn-secondary" href="/view-item"
-                  >CHOOSE OPTIONS
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-item-wrap">
-              <div class="thumb">
-                <img src="/img/product/pizza/4.png" alt="img" />
-                <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
-              </div>
-              <div class="wrap-details">
-                <h5><a href="/view-item">All Season Gulliver Pizza </a></h5>
-                <div class="wrap-footer">
-                  <div class="rating">
-                    4.9
-                    <span class="rating-inner">
-                      <i class="ri-star-fill ps-0"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-half-line pe-0"></i>
-                    </span>
-                    (462)
-                  </div>
-                  <h6 class="price">$27.00</h6>
-                </div>
-              </div>
-              <div class="btn-area">
-                <a class="btn btn-secondary" href="/view-item"
-                  >CHOOSE OPTIONS
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-item-wrap">
-              <div class="thumb">
-                <img src="/img/product/pizza/5.png" alt="img" />
-                <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
-              </div>
-              <div class="wrap-details">
-                <h5><a href="/view-item">Chicken Fajita Pizza Large </a></h5>
-                <div class="wrap-footer">
-                  <div class="rating">
-                    4.9
-                    <span class="rating-inner">
-                      <i class="ri-star-fill ps-0"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-half-line pe-0"></i>
-                    </span>
-                    (200)
-                  </div>
-                  <h6 class="price">$37.00</h6>
-                </div>
-              </div>
-              <div class="btn-area">
-                <a class="btn btn-secondary" href="/view-item"
-                  >CHOOSE OPTIONS
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-item-wrap">
-              <div class="thumb">
-                <img src="/img/product/pizza/6.png" alt="img" />
+                <img src="<%= foodItem.img%>" alt="img" />
                 <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
               </div>
               <div class="wrap-details">
                 <h5>
-                  <a href="/view-item">BBQ Chicken Classic Pizza Large </a>
+                  <a href="/view-item"><%=foodItem.name%></a>
                 </h5>
                 <div class="wrap-footer">
                   <div class="rating">
@@ -395,7 +147,7 @@
                     </span>
                     (928)
                   </div>
-                  <h6 class="price">$35.00</h6>
+                  <h6 class="price"><%=foodItem.price%></h6>
                 </div>
               </div>
               <div class="btn-area">
@@ -405,6 +157,7 @@
               </div>
             </div>
           </div>
+          <% }) %> <% } %>
         </div>
       </div>
       <div

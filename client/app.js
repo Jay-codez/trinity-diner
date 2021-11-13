@@ -18,6 +18,7 @@ const app = express();
 const contactRouter = require("./routes/contact");
 const userRouter = require("./routes/user");
 const fooditemRouter = require("./routes/food-item")
+const foodItem = require("./models/food-item")
 
 const PORT = 3000;
 
@@ -64,8 +65,11 @@ app.get("/about", (req, res) => {
   res.render("about", { title: "About Us" });
 });
 
-app.get("/menu", (req, res) => {
-  res.render("menu", { title: "Menu" });
+app.get("/menu", async (req, res) => {
+
+  const foodItems = await foodItem.find();
+
+  res.render("menu", { title: "Menu" ,foodItems});
 });
 
 app.get("/cart", (req, res) => {
