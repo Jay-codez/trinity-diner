@@ -50,6 +50,8 @@
               role="tab"
               aria-controls="pills-rice"
               aria-selected="true"
+              category="rice"
+              section="pills-ramen-center"
             >
               <img
                 src="/img/category/rice.png"
@@ -70,6 +72,8 @@
               role="tab"
               aria-controls="pills-meat"
               aria-selected="false"
+              category="meats"
+              section="pills-pizza-center"
             >
               <img
                 src="/img/category/meat.png"
@@ -87,8 +91,10 @@
               data-bs-target="#pills-burger"
               type="button"
               role="tab"
-              aria-controls="pills-delights"
+              aria-controls="pills-burger"
               aria-selected="false"
+              category="home-delights"
+              section="pills-burger-center"
             >
               <img
                 src="/img/category/home_delights.png"
@@ -109,6 +115,8 @@
               role="tab"
               aria-controls="pills-drinks"
               aria-selected="false"
+              category="drinks"
+              section="pills-drinks-center"
             >
               <img src="/img/category/6.png" alt="img" />Soft Drinks
             </button>
@@ -119,272 +127,40 @@
     <div class="tab-content" id="pills-tabContent">
       <div
         class="tab-pane fade show active"
-        id="pills-ramen"
         role="tabpanel"
         aria-labelledby="pills-ramen-tab"
+        id="pills-ramen"
       >
-        <div class="row justify-content-center">
-          <%if(foodItems){%> <%foodItems.forEach((foodItem)=>{ %>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-item-wrap">
-              <div class="thumb">
-                <img src="<%= foodItem.img%>" alt="img" />
-                <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
-              </div>
-              <div class="wrap-details">
-                <h5>
-                  <a href="/view-item"><%=foodItem.name%></a>
-                </h5>
-                <div class="wrap-footer">
-                  <div class="rating">
-                    4.9
-                    <span class="rating-inner">
-                      <i class="ri-star-fill ps-0"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-half-line pe-0"></i>
-                    </span>
-                    (928)
-                  </div>
-                  <h6 class="price"><%=foodItem.price%></h6>
-                </div>
-              </div>
-              <div class="btn-area">
-                <a class="btn btn-secondary" href="/view-item"
-                  >CHOOSE OPTIONS
-                </a>
-              </div>
-            </div>
-          </div>
-          <% }) %> <% } %>
-        </div>
+        <div class="row justify-content-center" id="pills-ramen-center"></div>
       </div>
       <div
         class="tab-pane fade"
-        id="pills-burger"
+        role="tabpanel"
+        aria-labelledby="pills-pizza-tab"
+        id="pills-pizza"
+      >
+        <div class="row justify-content-center" id="pills-pizza-center"></div>
+      </div>
+      <div
+        class="tab-pane fade"
         role="tabpanel"
         aria-labelledby="pills-burger-tab"
+        id="pills-burger"
       >
-        <div class="row justify-content-center">
-          <div class="col-lg-4 col-md-6">
-            <div class="single-item-wrap">
-              <div class="thumb">
-                <img src="/img/product/fufu.png" alt="img" />
-                <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
-              </div>
-              <div class="wrap-details">
-                <h5><a href="/view-item">Fufu</a></h5>
-                <div class="wrap-footer">
-                  <div class="rating">
-                    4.9
-                    <span class="rating-inner">
-                      <i class="ri-star-fill ps-0"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-half-line pe-0"></i>
-                    </span>
-                    (200)
-                  </div>
-                  <h6 class="price">$17.00</h6>
-                </div>
-              </div>
-              <div class="btn-area">
-                <a class="btn btn-secondary" href="/view-item"
-                  >CHOOSE OPTIONS
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-item-wrap">
-              <div class="thumb">
-                <img src="/img/product/banku.png" alt="img" />
-                <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
-              </div>
-              <div class="wrap-details">
-                <h5><a href="/view-item">Banku</a></h5>
-                <div class="wrap-footer">
-                  <div class="rating">
-                    4.9
-                    <span class="rating-inner">
-                      <i class="ri-star-fill ps-0"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-half-line pe-0"></i>
-                    </span>
-                    (928)
-                  </div>
-                  <h6 class="price">$29.00</h6>
-                </div>
-                <div class="btn-area">
-                  <a class="btn btn-secondary" href="/view-item"
-                    >CHOOSE OPTIONS
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-item-wrap">
-              <div class="thumb">
-                <img src="/img/product/rice_balls.png" alt="img" />
-                <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
-              </div>
-              <div class="wrap-details">
-                <h5><a href="/view-item">Rice Balls</a></h5>
-                <div class="wrap-footer">
-                  <div class="rating">
-                    4.9
-                    <span class="rating-inner">
-                      <i class="ri-star-fill ps-0"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-half-line pe-0"></i>
-                    </span>
-                    (462)
-                  </div>
-                  <h6 class="price">$27.00</h6>
-                </div>
-              </div>
-              <div class="btn-area">
-                <a class="btn btn-secondary" href="/view-item"
-                  >CHOOSE OPTIONS
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="row justify-content-center" id="pills-burger-center"></div>
       </div>
 
       <!-- Soft drinks -->
       <div
         class="tab-pane fade"
-        id="pills-drinks"
         role="tabpanel"
         aria-labelledby="pills-drinks-tab"
+        id="pills-drinks"
       >
-        <div class="row justify-content-center">
-          <div class="col-lg-4 col-md-6">
-            <div class="single-item-wrap">
-              <div class="thumb">
-                <img src="/img/product/coke.png" alt="img" />
-                <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
-              </div>
-              <div class="wrap-details">
-                <h5><a href="/view-item">Coke</a></h5>
-                <div class="wrap-footer">
-                  <div class="rating">
-                    4.9
-                    <span class="rating-inner">
-                      <i class="ri-star-fill ps-0"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-half-line pe-0"></i>
-                    </span>
-                    (200)
-                  </div>
-                  <h6 class="price">$17.00</h6>
-                </div>
-              </div>
-              <div class="btn-area">
-                <a class="btn btn-secondary" href="/view-item"
-                  >CHOOSE OPTIONS
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-item-wrap">
-              <div class="thumb">
-                <img src="/img/product/fanta.png" alt="img" />
-                <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
-              </div>
-              <div class="wrap-details">
-                <h5><a href="/view-item">Fanta</a></h5>
-                <div class="wrap-footer">
-                  <div class="rating">
-                    4.9
-                    <span class="rating-inner">
-                      <i class="ri-star-fill ps-0"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-half-line pe-0"></i>
-                    </span>
-                    (928)
-                  </div>
-                  <h6 class="price">$29.00</h6>
-                </div>
-                <div class="btn-area">
-                  <a class="btn btn-secondary" href="/view-item"
-                    >CHOOSE OPTIONS
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-item-wrap">
-              <div class="thumb">
-                <img src="/img/product/sprite.png" alt="img" />
-                <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
-              </div>
-              <div class="wrap-details">
-                <h5><a href="/view-item">Sprite</a></h5>
-                <div class="wrap-footer">
-                  <div class="rating">
-                    4.9
-                    <span class="rating-inner">
-                      <i class="ri-star-fill ps-0"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-half-line pe-0"></i>
-                    </span>
-                    (462)
-                  </div>
-                  <h6 class="price">$27.00</h6>
-                </div>
-              </div>
-              <div class="btn-area">
-                <a class="btn btn-secondary" href="/view-item"
-                  >CHOOSE OPTIONS
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="row justify-content-center" id="pills-drinks-center"></div>
       </div>
     </div>
   </div>
 </section>
 
 <%- include("./partials/footer.ejs") %>
-
-<!-- back-to-top end -->
-<div class="back-to-top">
-  <span class="back-top"><i class="fas fa-angle-double-up"></i></span>
-</div>
-
-<!-- all plugins here -->
-<script src="/js/jquery.3.6.min.js"></script>
-<script src="/js/jquery-ui.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/imageloded.min.js"></script>
-<script src="/js/counterup.js"></script>
-<script src="/js/waypoint.js"></script>
-<script src="/js/magnific.min.js"></script>
-<script src="/js/isotope.pkgd.min.js"></script>
-<script src="/js/nice-select.min.js"></script>
-<script src="/js/fontawesome.min.js"></script>
-<script src="/js/owl.min.js"></script>
-<script src="/js/slick-slider.min.js"></script>
-<script src="/js/wow.min.js"></script>
-<script src="/js/tweenmax.min.js"></script>
-<!-- main js  -->
-<script src="/js/main.js"></script>

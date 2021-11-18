@@ -50,10 +50,13 @@
       <div class="nav-right-part nav-right-part-desktop">
         <ul>
           <li class="account_status">
-            <a href="/signin"><i class="far fa-user-circle"></i> SIGN IN</a>
+            <a href="/signin"><i class="far fa-user-circle"></i></a>
           </li>
           <li class="menu-cart">
-            <a href="/cart">CART <span>0</span></a>
+            <a href="/cart"
+              >CART( <% if (typeof cart !== "undefined") { %> <%=cart.length %>
+              <%} else {%> 0 <%}%> )</a
+            >
           </li>
         </ul>
       </div>

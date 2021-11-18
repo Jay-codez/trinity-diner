@@ -15,7 +15,7 @@ const foodItemSchema = new mongoose.Schema({
     type: String,
     enum : ["rice","meats","home-delights","drinks"],
   
-  },
+  }
   //image_urls: [String],
   
 });

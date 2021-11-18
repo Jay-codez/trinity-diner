@@ -17,8 +17,8 @@
       <div class="col-lg-6 col-md-8 align-self-center">
         <div class="banner-inner text-center">
           <h3>Do not miss it!</h3>
-          <h1>The best Jollof rice you would ever have!</h1>
-          <a class="btn btn-secondary" href="/food-item">ORDER NOW</a>
+          <h1>The best Jollof Rice you would ever have!</h1>
+          <a class="btn btn-secondary" href="/menu">ORDER NOW</a>
         </div>
       </div>
     </div>
@@ -27,7 +27,7 @@
 <!-- Banner Area End -->
 
 <!-- popular Area Start-->
-<section class="populer-area pd-bottom-90">
+<!-- <section class="populer-area pd-bottom-90">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12">
@@ -41,39 +41,13 @@
       <div class="col-lg-4 col-md-6">
         <div class="single-item-wrap">
           <div class="thumb">
-            <img src="/img/product/jollof_rice_t.png" alt="img" />
+            <img src="${item.img}" alt="img" />
             <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
           </div>
           <div class="wrap-details">
-            <h5><a href="/fooditem">Jollof Rice</a></h5>
-            <div class="wrap-footer">
-              <div class="rating">
-                4.9
-                <span class="rating-inner">
-                  <i class="ri-star-fill ps-0"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-half-line pe-0"></i>
-                </span>
-                (200)
-              </div>
-              <h6 class="price">$17.00</h6>
-            </div>
-          </div>
-          <div class="btn-area">
-            <a class="btn btn-secondary" href="/fooditem">CHOOSE OPTIONS </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="single-item-wrap">
-          <div class="thumb">
-            <img src="/img/product/fried_rice_t.png" alt="img" />
-            <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
-          </div>
-          <div class="wrap-details">
-            <h5><a href="/fooditem">Fried Rice</a></h5>
+            <h5>
+              <a href="/food-item/find/${item._id}">${item.name}</a>
+            </h5>
             <div class="wrap-footer">
               <div class="rating">
                 4.9
@@ -86,123 +60,13 @@
                 </span>
                 (928)
               </div>
-              <h6 class="price">$29.00</h6>
-            </div>
-            <div class="btn-area">
-              <a class="btn btn-secondary" href="/fooditem">CHOOSE OPTIONS </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="single-item-wrap">
-          <div class="thumb">
-            <img src="/img/product/waakye.png" alt="img" />
-            <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
-          </div>
-          <div class="wrap-details">
-            <h5><a href="/fooditem">Waakye</a></h5>
-            <div class="wrap-footer">
-              <div class="rating">
-                4.9
-                <span class="rating-inner">
-                  <i class="ri-star-fill ps-0"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-half-line pe-0"></i>
-                </span>
-                (462)
-              </div>
-              <h6 class="price">$27.00</h6>
+              <h6 class="price">$${parseFloat(item.price).toFixed(2)}</h6>
             </div>
           </div>
           <div class="btn-area">
-            <a class="btn btn-secondary" href="/fooditem">CHOOSE OPTIONS </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="single-item-wrap">
-          <div class="thumb">
-            <img src="/img/product/waakye.png" alt="img" />
-            <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
-          </div>
-          <div class="wrap-details">
-            <h5><a href="/fooditem">Waakye</a></h5>
-            <div class="wrap-footer">
-              <div class="rating">
-                4.9
-                <span class="rating-inner">
-                  <i class="ri-star-fill ps-0"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-half-line pe-0"></i>
-                </span>
-                (462)
-              </div>
-              <h6 class="price">$27.00</h6>
-            </div>
-          </div>
-          <div class="btn-area">
-            <a class="btn btn-secondary" href="/fooditem">CHOOSE OPTIONS </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="single-item-wrap">
-          <div class="thumb">
-            <img src="/img/product/waakye.png" alt="img" />
-            <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
-          </div>
-          <div class="wrap-details">
-            <h5><a href="/fooditem">Waakye</a></h5>
-            <div class="wrap-footer">
-              <div class="rating">
-                4.9
-                <span class="rating-inner">
-                  <i class="ri-star-fill ps-0"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-half-line pe-0"></i>
-                </span>
-                (462)
-              </div>
-              <h6 class="price">$27.00</h6>
-            </div>
-          </div>
-          <div class="btn-area">
-            <a class="btn btn-secondary" href="/fooditem">CHOOSE OPTIONS </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="single-item-wrap">
-          <div class="thumb">
-            <img src="/img/product/waakye.png" alt="img" />
-            <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
-          </div>
-          <div class="wrap-details">
-            <h5><a href="/fooditem">Waakye</a></h5>
-            <div class="wrap-footer">
-              <div class="rating">
-                4.9
-                <span class="rating-inner">
-                  <i class="ri-star-fill ps-0"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-half-line pe-0"></i>
-                </span>
-                (462)
-              </div>
-              <h6 class="price">$27.00</h6>
-            </div>
-          </div>
-          <div class="btn-area">
-            <a class="btn btn-secondary" href="/fooditem">CHOOSE OPTIONS </a>
+            <a class="btn btn-secondary" href="/food-item/find/${item._id}"
+              >VIEW
+            </a>
           </div>
         </div>
       </div>
@@ -211,7 +75,7 @@
       >Full Menu<i class="fas fa-angle-right"></i
     ></a>
   </div>
-</section>
+</section> -->
 
 <!-- popular Area End -->
 
@@ -325,26 +189,3 @@
 <!-- testimonial Area End -->
 
 <%- include("./partials/footer.ejs") %>
-
-<!-- back-to-top end -->
-<div class="back-to-top">
-  <span class="back-top"><i class="fas fa-angle-double-up"></i></span>
-</div>
-
-<!-- all plugins here -->
-<script src="/js/jquery.3.6.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/imageloded.min.js"></script>
-<script src="/js/counterup.js"></script>
-<script src="/js/waypoint.js"></script>
-<script src="/js/magnific.min.js"></script>
-<script src="/js/isotope.pkgd.min.js"></script>
-<script src="/js/jquery-ui.min.js"></script>
-<script src="/js/nice-select.min.js"></script>
-<script src="/js/fontawesome.min.js"></script>
-<script src="/js/owl.min.js"></script>
-<script src="/js/slick-slider.min.js"></script>
-<script src="/js/wow.min.js"></script>
-<script src="/js/tweenmax.min.js"></script>
-<!-- main js  -->
-<script src="/js/main.js"></script>

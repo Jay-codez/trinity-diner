@@ -7,7 +7,14 @@ const fileUpload = require("express-fileupload")
 const passportLocal = require("passport-local").Strategy
 const session = require("cookie-session");
 const User = require("./models/user");
-const fs = require("fs");
+const fs = require("fs-extra");
+const {
+  findAll,
+  findById,
+  create,
+  findByCategory,
+} = require("./controllers/food-item");
+
 require("dotenv/config");
 
 const cors = require('cors');
@@ -18,30 +25,17 @@ const app = express();
 const contactRouter = require("./routes/contact");
 const userRouter = require("./routes/user");
 const fooditemRouter = require("./routes/food-item")
+const cartRouter = require("./routes/cart")
+
 const foodItem = require("./models/food-item")
 
-const PORT = 3000;
 
-app.use(
-  session({
-    
-    maxAge:30*24*60*60*1000,
-    keys:["jaystro"]
-  })
-)
+const PORT = 3000;
 
 app.use(cors({
   origin: "*"
 }));
 
-
-// app.use(
-//   bodyParser.urlencoded({
-//     extended: true,
-//   })
-// );
-// app.use(bodyParser.json({
-// }));
 
 app.use(express.urlencoded({extended:true,limit:"500mb"}))
 app.use(express.json({limit:"500mb"}))
@@ -50,15 +44,23 @@ app.set("view engine", "ejs");
 
 app.use("/", express.static("assets"));
 app.use(express.urlencoded({ extended: true }));
-app.use(passport.initialize())
-app.use(passport.session())
 app.use(fileUpload())
-passport.use(new passportLocal(User.authenticate()))
-passport.serializeUser(User.serializeUser())
-passport.deserializeUser(User.deserializeUser())
+
 
 app.get("/", (req, res) => {
   res.render("index", { title: "Home" });
+});
+
+app.get("/", async (req, res) => {
+  const data = await findAll(req, res);
+  res.render("food-item", { title: "Item View", data });
+});
+
+app.get("/find/:id", async (req, res) => {
+  const foodItem = await findById(req, res);
+
+
+  res.render("index", { title: "Home", foodItem});
 });
 
 app.get("/about", (req, res) => {
@@ -77,67 +79,14 @@ app.get("/cart", (req, res) => {
 });
 
 
-/* app.get("/cart", (req, res) => {
-  res.render("cart", { title: "Sign Up" });
-}); */
-
-/* app.get("/signin", (req, res) => {
-  const signin = new Signin({
-    email: "new@email.com",
-    password: "password1"
-  });
-
-  signin.save()
-});
- */
-
-// app.post("/add-account", (req, res) => {
-//   const account = new Account(req.body);
-
-//   account.save()
-//     .then((result) => {
-//       res.render("/signin");
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     })
-// });
-
-// //const acc_id = req.params.id;
-
-// app.get("/find-account", (req, res) => {
-//   const id = req.params.id;
-//   Signup.findById(id)
-//     .then(result => {
-//       res.render("account", { signup: result, email: "new@email.com" });
-//     })
-//     .catch(err => {
-//       console.log(err);
-//   })
-// })
-
-// app.get("/orders", (req, res) => {
-//   Order.find()
-//     .then((result) => {
-//     res.render("index", {title: "Orders", orders: result})
-//     })
-//     .catch((err) => {
-//     console.log(err)
-//   })
-// });
-
-/* app.get("/orders/create", (req, res) => {
-  res.render("orders", { title: "New order" });
-});
-
-app.get("/fooditem/:id", (req, res) => {
-  console.log(req.params);
-
-  res.render("fooditem");
-}); */
-
 app.use((req, res, next) => {
   res.locals.current_user = req.user;
+
+  next();
+});
+
+app.get((req, res, next) => {
+  res.locals.cart = req.session.cart;
 
   next();
 });
@@ -145,6 +94,8 @@ app.use((req, res, next) => {
 app.use(userRouter);
 app.use(contactRouter);
 app.use("/food-item", fooditemRouter);
+app.use(cartRouter);
+
 
 /* const multer = require("multer");
 
