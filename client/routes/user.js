@@ -12,12 +12,18 @@ router.post("/signin", async (req, res) => {
     //console.log(results);
 
     if(results){
-        res.render("index",{current_user : results,title: "Sign In"})
+        req.session.current_user = results;
+        res.redirect("/")
     }else{
         res.redirect("/signin")
     }
 });
 
+router.get("/signout", (req, res) => {
+    req.session.current_user = undefined
+    res.redirect("/");
+  });
+  
 
 router.get("/signup", (req, res) => {
   res.render("signup", { title: "Sign Up" });

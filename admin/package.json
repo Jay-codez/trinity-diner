@@ -8,6 +8,7 @@
     "bootstrap": "^4.3.1",
     "chart.js": "^2.8.0",
     "chartist": "^0.11.2",
+    "cookie-session": "^1.4.0",
     "daterangepicker": "^3.0.5",
     "ejs": "^3.1.6",
     "express": "^4.17.1",

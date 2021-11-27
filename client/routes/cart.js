@@ -1,89 +1,78 @@
 const express = require("express");
 const router = express.Router();
 
-const Cart = require("../models/cart")
+const Cart = require("../controllers/cart")
+const FoodItem = require("../models/food-item")
+const User = require("../models/user")
+
 
 const emailControl = require("../controllers/email");
-const foodItem = require("../models/food-item");
 
-router.get("/", async (req, res) => {
-    res.render("cart", { title: "Cart" })
-});
-  
-router.post("/add/:food-item", async (req, res) => {
-  const item = req.params.foodItem;
 
-  foodItem.findOne({ item }, function (err, i) {
-    const { body, file } = req.body;
+router.get('/', function(req, res, next) {
+    var loginUser = req.session.current_user._id
 
-    const fileName = `${process.cwd()}/assets/img/food-items/${body.name}.png`;
-    if (file != null) {
-      let buffer = Buffer.from(file.fileupload.data, "base64");
-  
-      fs.writeFile(fileName, buffer, (err) => {
-        if (err) throw err;
-        console.log("Image successfully added to cart.");
-      });
-    }
-    
-    if (err)
-      console.log(err);
-    if (typeof req.session.cart == "undefined") {
-      req.session.cart = [];
-      req.session.cart.push({
-        name: item,
-        price: parseFloat(i.price).toFixed(2),
-        img: fileName.substring(fileName.indexOf("img") - 1, fileName.length),
-        category: {
-          type: String,
-          enum: ["rice", "meats", "home-delights", "drinks"],
+    User.find({ _id: loginUser }).exec(function(err, userdata) {
+        if (err) throw err
+
+        if (!req.session.cart) {
+            return res.render('cart', { title: 'Cart', loginUserInfo: loginUser, userData: userdata });
         }
-      })
-    } else {
-      const cart = req.session.cart;
-      const newItem = true;
 
-      for (const i = 0; i < cart.length; i++) {
-        if (cart[i].name == item) {
-          cart[i].qty++;
-          newItem = false;
-          break;
-        }
-      }
+        var cart = new Cart(req.session.cart);
+        console.log("CART ITEMS" + JSON.stringify(cart.getItems()))
+        res.render('cart', { title: 'Cart', foodItems: cart.getItems(), totalPrice: cart.totalPrice, loginUserInfo: loginUser, userData: userdata });
+    });
+})
 
-      if (newItem) {
-        cart.push({
-          name: item,
-        price: parseFloat(i.price).toFixed(2),
-        img: fileName.substring(fileName.indexOf("img") - 1, fileName.length),
-        category: {
-          type: String,
-          enum: ["rice", "meats", "home-delights", "drinks"],
-        }
-        })
-      }
-    }
-    console.log(req.session.cart);
-    res.redirect("back");
-  })
+router.get('/buy-product/:id', function(req, res, next) {
+    var loginUser = req.session.userId
+
+    var productId = req.params.id;
+    var cart = new Cart(req.session.cart ? req.session.cart : {});
+    FoodItem.findOne({ _id: productId }, function(err, data) {
+        cart.add(data, productId);
+        req.session.cart = cart;
+        res.redirect('/checkout');
+    });
+
 });
 
-// router.get("/find/:id", async (req, res) => {
-//     const foodItem = await findById(req, res);
-  
-//     const relatedFood = await findByCategory(foodItem.category);
-  
-//     console.log(relatedFood);
-  
-//     res.render("food-item", { title: "Food Item", foodItem, relatedFood });
-// });
+router.get('/add/:id', function(req, res, next) {
+    var productId = req.params.id;
+    var cart = new Cart(req.session.cart ? req.session.cart : {});
+    FoodItem.findOne({ _id: productId }, function(err, data) {
+        cart.add(data, productId);
+        req.session.cart = cart;
+        res.redirect('/cart');
+    });
 
+});
 
+router.get('/remove/:id', function(req, res, next) {
+    var productId = req.params.id;
+    var cart = new Cart(req.session.cart ? req.session.cart : {});
 
-router.post("/checkout/:id"), async (req, res) => {
+    cart.remove(productId);
+    req.session.cart = cart;
+    res.redirect('/cart');
+});
 
-  emailControl.main("capstonetest771@gmail.com", "Test1", "message")
-}
+router.post('/reduce/:id', function(req, res, next) {
+    var productId = req.params.id;
+    var cart = new Cart(req.session.cart ? req.session.cart : {});
+    cart.reduceByOne(productId);
+    req.session.cart = cart;
+    res.status(200).json({ "success": true })
+});
+
+router.post('/increment/:id', function(req, res, next) {
+    var productId = req.params.id;
+    var cart = new Cart(req.session.cart ? req.session.cart : {});
+    cart.addByOne(productId);
+    req.session.cart = cart;
+    res.status(200).json({ "success": true })
+});
 
 
 

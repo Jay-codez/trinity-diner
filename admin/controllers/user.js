@@ -1,32 +1,28 @@
 const User = require("../models/user");
-const passport = require("passport")
 
 const createAccount = async (body) => {
   const { firstname, lastname, username, terms, password } = body;
 
   let user = new User({
     username: username,
+    password,
     firstname: firstname,
     lastname: lastname,
     terms: terms,
 
   });
 
-user.setPassword(password)
-  const results = await User.register(user, password);
-
-  let authenticate = User.authenticate();
-  await authenticate(username, password);
+  const results = await User.create(user);
 
   return results;
 };
 
 const signIn = async (body) => {
-//   const { username, password } = body;
-//   let authenticate = User.authenticate();
+  const { email, password } = body;
 
-//   let results = await authenticate(username, password);
-//   return results;
+  let results = await User.findOne({username:email})
+
+    return results;
 };
 
 module.exports = { createAccount, signIn };

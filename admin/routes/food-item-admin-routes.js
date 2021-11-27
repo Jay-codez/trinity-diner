@@ -1,20 +1,20 @@
 const router = require("express").Router();
-const {addFoodIem} = require("../clients/food-item-client")
+const { addFoodIem } = require("../clients/food-item-client")
 
 
 router.get("/add-food-item", (req, res) => {
-    res.render("add-items"); 
-  });
-    
+    res.render("add-items");
+});
 
-router.post("/add-food-item", async (req, res) => {
 
-    const data = await addFoodIem(req,res);
+router.post("/add-food-item", async(req, res) => {
 
-    if(data){
-      res.redirect("/add-food-item")
-    }else{
-      res.redirect("/add-food-item")
+    const data = await addFoodIem(req, res);
+
+    if (data) {
+        res.redirect("/add-food-item")
+    } else {
+        res.redirect("/add-food-item")
     }
 
 });

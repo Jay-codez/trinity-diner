@@ -47,10 +47,22 @@
           </li>
         </ul>
       </div>
-      <div class="nav-right-part nav-right-part-desktop">
-        <ul>
-          <li class="account_status">
-            <a href="/signin"><i class="far fa-user-circle"></i></a>
+      <div class="collapse navbar-collapse" id="themefie_main_menu">
+        <ul class="navbar-nav menu-open">
+          <li class="current-menu-item menu-item-has-children">
+            <a href="#"
+              ><i class="far fa-user-circle"></i><% if (typeof
+              session.current_user !== "undefined") {%>
+              <%=session.current_user.firstname %> <% } else {%> User <%} %></a
+            >
+            <ul class="sub-menu ps-0">
+              <% if (typeof session.current_user !== "undefined") {%>
+              <li><a href="#">My Orders</a></li>
+
+              <li><a href="/signout">Sign Out</a> <%} else {%></li>
+              <li><a href="/signin">Sign In</a></li>
+              <%} %>
+            </ul>
           </li>
           <li class="menu-cart">
             <a href="/cart"

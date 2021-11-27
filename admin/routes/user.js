@@ -1,25 +1,32 @@
 const router = require("express").Router();
 const { createAccount ,signIn} = require("../controllers/user");
-const passport = require("passport")
 
 router.get("/signin", (req, res) => {
-  res.render("signin");
+  res.render("signin", { title: "Sign In" });
 });
 
+router.post("/signin", async (req, res) => {
+    const body = req.body;
+    
+    const results = await signIn(body);
+    //console.log(results);
 
-
-router.post("/signin", 
-passport.authenticate("local",{
-    successRedirect:"/",
-    failureRedirect:"/signin"
-}),(req,res)=>{
-
+    if(results){
+        req.session.current_user = results;
+        res.render("index", {title: "Welcome"})
+    }else{
+        res.redirect("/signin")
+    }
 });
 
-
+router.get("/signout", (req, res) => {
+    req.session.current_user = undefined
+    res.redirect("/");
+  });
+  
 
 router.get("/signup", (req, res) => {
-  res.render("signup");
+  res.render("signup", { title: "Sign Up" });
 });
 
 router.post("/signup", async (req,res)=>{

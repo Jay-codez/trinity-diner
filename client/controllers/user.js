@@ -20,10 +20,9 @@ const createAccount = async (body) => {
 const signIn = async (body) => {
   const { email, password } = body;
 
-  console.log(body)
-
   let results = await User.findOne({username:email})
-  return results;
+
+    return results;
 };
 
 module.exports = { createAccount, signIn };
