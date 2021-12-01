@@ -30,7 +30,7 @@
         <!-- bredcrumb Area End -->
 
         <!-- cart area start -->
-        <div id="item-quantity" class="cart-area pd-top-120 pd-bottom-120">
+        <div id="cart-item-list" class="cart-area pd-top-120 pd-bottom-120">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-12">
@@ -52,7 +52,9 @@
                                         <%foodItems.forEach((foodItem)=>{%>
                                             <tr>
                                                 <td class="table-close-btn">
-                                                    <a href="#"><i class="ri-close-line"></i></a>
+                                                    <button class="delete-cart-item" delItemId="<%=foodItem.item._id%>">
+                    <i class="ri-close-line"></i>
+                  </button>
                                                 </td>
                                                 <th scope="row">
                                                     <img src="<%=foodItem.item.img%>" alt="img" />
@@ -64,8 +66,8 @@
                                                         </h5>
                                                     </div>
                                                 </td>
-                                                <td>
-                                                    <%=foodItem.item.price%>
+                                                <td>$
+                                                    <%=parseFloat(foodItem.price).toFixed(2)%>
                                                 </td>
                                                 <td class="table-quantity">
                                                     <form>
@@ -76,8 +78,8 @@
                                                         </div>
                                                     </form>
                                                 </td>
-                                                <td>
-                                                    <%=foodItem.price%>
+                                                <td>$
+                                                    <%=parseFloat(foodItem.price).toFixed(2)%>
                                                 </td>
                                             </tr>
                                             <% })%>
@@ -100,10 +102,10 @@
                             <div class="order-cart">
                                 <h5>Cart Totals</h5>
                                 <ul>
-                                    <li>Total<span><%=totalPrice%></span></li>
+                                    <li>Total<span>$<%=parseFloat(totalPrice).toFixed(2)%></span></li>
                                 </ul>
                             </div>
-                            <a class="btn btn-secondary w-100" href="#">PLACE ORDER</a>
+                            <a class="btn btn-secondary w-100" href="/checkout">PLACE ORDER</a>
                         </div>
                     </div>
                 </div>

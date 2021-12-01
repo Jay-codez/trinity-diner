@@ -55,10 +55,10 @@ router.get('/remove/:id', function(req, res, next) {
 
     cart.remove(productId);
     req.session.cart = cart;
-    res.redirect('/cart');
+    res.status(200).json({ "success": true })
 });
 
-router.post('/reduce/:id', function(req, res, next) {
+router.get('/reduce/:id', function(req, res, next) {
     var productId = req.params.id;
     var cart = new Cart(req.session.cart ? req.session.cart : {});
     cart.reduceByOne(productId);
@@ -66,7 +66,7 @@ router.post('/reduce/:id', function(req, res, next) {
     res.status(200).json({ "success": true })
 });
 
-router.post('/increment/:id', function(req, res, next) {
+router.get('/increment/:id', function(req, res, next) {
     var productId = req.params.id;
     var cart = new Cart(req.session.cart ? req.session.cart : {});
     cart.addByOne(productId);

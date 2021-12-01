@@ -2,9 +2,9 @@ const router = require("express").Router();
 
 
 router.get("/orders", (req, res) => {
-    res.render("orders"); 
-  });
-    
+    res.render("orders");
+});
+
 
 
 

@@ -25,7 +25,7 @@ const fetchByCategory = (category, section) => {
           <div class="thumb">
             <img
               src="${item.img}"
-              alt="img"
+              alt="img" width="500" height="500"
             />
             <a class="fav-btn" href="#"><i class="ri-heart-line"></i></a>
           </div>
@@ -67,7 +67,7 @@ const fetchByCategory = (category, section) => {
 
 
 const increaseItemQty = (itemId) => {
-    $.post(`/cart/increment/${itemId}`, (data, res) => {
+    $.get(`/cart/increment/${itemId}`, (data, res) => {
 
         if (res) {
             refreshSection("cart-item-list")
@@ -76,9 +76,10 @@ const increaseItemQty = (itemId) => {
     })
 
 }
+
 
 const decreaseItemQty = (itemId) => {
-    $.post(`/cart/reduce/${itemId}`, (data, res) => {
+    $.get(`/cart/reduce/${itemId}`, (data, res) => {
 
         if (res) {
             refreshSection("cart-item-list")
@@ -87,6 +88,18 @@ const decreaseItemQty = (itemId) => {
     })
 
 }
+
+const deleteCartItem = (itemId) => {
+    $.get(`/cart/remove/${itemId}`, (data, res) => {
+
+        if (res) {
+            refreshSection("cart-item-list")
+        }
+
+    })
+
+}
+
 
 $("#pills-tab").on("click", ".nav-link", function(e) {
     e.preventDefault();
@@ -109,4 +122,11 @@ $("#cart-item-list").on("click", ".minus", function(e) {
     let decItemId = $(this).attr("decItemId")
 
     decreaseItemQty(decItemId)
+});
+
+$("#cart-item-list").on("click", ".delete-cart-item", function(e) {
+    e.preventDefault();
+    let delItemId = $(this).attr("delItemId")
+
+    deleteCartItem(delItemId)
 });
