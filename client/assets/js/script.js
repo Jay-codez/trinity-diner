@@ -94,6 +94,7 @@ const deleteCartItem = (itemId) => {
 
         if (res) {
             refreshSection("cart-item-list")
+            refreshSection("themefie_main_menu")
         }
 
     })

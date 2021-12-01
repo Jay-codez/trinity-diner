@@ -101,6 +101,7 @@ const checkoutRouter = require("./routes/checkout");
 const userRouter = require("./routes/user");
 const fooditemRouter = require("./routes/food-item")
 const cartRouter = require("./routes/cart")
+const ordersRouter = require("./routes/orders")
 
 const foodItem = require("./models/food-item")
 app.use(userRouter);
@@ -108,6 +109,7 @@ app.use(contactRouter);
 app.use(checkoutRouter);
 app.use("/food-item", fooditemRouter);
 app.use("/cart", cartRouter);
+app.use("/orders", ordersRouter)
 
 
 /* const multer = require("multer");

@@ -48,8 +48,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <%if(typeof foodItems != undefined) {%>
-                                        <%foodItems.forEach((foodItem)=>{%>
+                                    <%if(cartItems) {%>
+                                        <%cartItems.forEach((foodItem)=>{%>
                                             <tr>
                                                 <td class="table-close-btn">
                                                     <button class="delete-cart-item" delItemId="<%=foodItem.item._id%>">

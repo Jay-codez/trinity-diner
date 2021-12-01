@@ -1,57 +1,46 @@
 <header class="navbar-area">
-  <nav class="navbar navbar-expand-lg">
-    <div class="container nav-container">
-      <div class="responsive-mobile-menu">
-        <button
-          class="menu toggle-btn d-block d-lg-none"
-          data-target="#themefie_main_menu"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+    <nav class="navbar navbar-expand-lg">
+        <div class="container nav-container">
+            <div class="responsive-mobile-menu">
+                <button class="menu toggle-btn d-block d-lg-none" data-target="#themefie_main_menu" aria-expanded="false" aria-label="Toggle navigation">
           <span class="icon-left"></span>
           <span class="icon-right"></span>
         </button>
-      </div>
-      <div class="collapse navbar-collapse" id="themefie_main_menu">
-        <ul class="navbar-nav menu-open">
-          <li>
-            <a href="/">HOME</a>
-          </li>
-          <li>
-            <a href="/menu">MENU</a>
-          </li>
-          <li>
-            <a href="/about">ABOUT US</a>
-          </li>
-          <li>
-            <a href="/contact">CONTACT US</a>
-          </li>
-        </ul>
-      </div>
-      <div class="logo">
-        <a class="main-logo" href="/"
-          ><img
-            src="/img/logo_trinity_diner.png"
-            alt="img"
-            width="200"
-            height="200"
-        /></a>
-      </div>
-      <div class="nav-right-part nav-right-part-mobile">
-        <ul>
-          <li class="account_status d-md-block d-none">
-            <a href="/signin"><i class="far fa-user-circle"></i> SIGN IN</a>
-          </li>
-          <li class="menu-cart">
-            <a href="/cart">CART <span>0</span></a>
-          </li>
-        </ul>
-      </div>
-      <div class="collapse navbar-collapse" id="themefie_main_menu">
-        <ul class="navbar-nav menu-open">
-          <li class="current-menu-item menu-item-has-children">
-            <a href="#"
-              ><i class="far fa-user-circle"></i><% if (typeof
+            </div>
+            <div class="collapse navbar-collapse" id="themefie_main_menu">
+                <ul class="navbar-nav menu-open">
+                    <li>
+                        <a href="/">HOME</a>
+                    </li>
+                    <li>
+                        <a href="/menu">MENU</a>
+                    </li>
+                    <li>
+                        <a href="/about">ABOUT US</a>
+                    </li>
+                    <li>
+                        <a href="/contact">CONTACT US</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="logo">
+                <a class="main-logo" href="/"><img src="/img/logo_trinity_diner.png" alt="img" width="200" height="200" /></a>
+            </div>
+            <div class="nav-right-part nav-right-part-mobile">
+                <ul>
+                    <li class="account_status d-md-block d-none">
+                        <a href="/signin"><i class="far fa-user-circle"></i> SIGN IN</a>
+                    </li>
+                    <li class="menu-cart">
+                        <a href="/cart">CART <span>0</span></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav menu-open">
+                    <li class="current-menu-item menu-item-has-children">
+                        <a href="#"><i class="far fa-user-circle"></i><% if (typeof
               session.current_user !== "undefined") {%>
               <%=session.current_user.firstname %> <% } else {%> User <%} %></a
             >
@@ -59,15 +48,17 @@
               <% if (typeof session.current_user !== "undefined") {%>
               <li><a href="#">My Orders</a></li>
 
-              <li><a href="/signout">Sign Out</a> <%} else {%></li>
-              <li><a href="/signin">Sign In</a></li>
-              <%} %>
-            </ul>
-          </li>
-          <li class="menu-cart">
-            <a href="/cart"
-              >CART( <% if (typeof cart !== "undefined") { %> <%=cart.length %>
-              <%} else {%> 0 <%}%> )</a
+                    <li>
+                        <a href="/signout">Sign Out</a>
+                        <%} else {%>
+                    </li>
+                    <li><a href="/signin">Sign In</a></li>
+                    <%} %>
+                </ul>
+                </li>
+                <li class="menu-cart">
+                    <a href="/cart">CART( <% if (typeof session.cartLength !== "undefined") { %>
+              <%=session.cartLength %> <%} else {%> 0 <%}%> )</a
             >
           </li>
         </ul>

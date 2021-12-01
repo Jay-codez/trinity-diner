@@ -20,8 +20,10 @@ router.get('/', function(req, res, next) {
         }
 
         var cart = new Cart(req.session.cart);
-        console.log("CART ITEMS" + JSON.stringify(cart.getItems()))
-        res.render('cart', { title: 'Cart', foodItems: cart.getItems(), totalPrice: cart.totalPrice, loginUserInfo: loginUser, userData: userdata });
+        req.session.cartLength = cart.getItems().length
+        console.log(req.session.cart)
+            //console.log("CART ITEMS" + JSON.stringify(cart.getItems()))
+        res.render('cart', { title: 'Cart', cartItems: cart.getItems(), totalPrice: cart.totalPrice, loginUserInfo: loginUser, userData: userdata });
     });
 })
 
@@ -43,6 +45,8 @@ router.get('/add/:id', function(req, res, next) {
     var cart = new Cart(req.session.cart ? req.session.cart : {});
     FoodItem.findOne({ _id: productId }, function(err, data) {
         cart.add(data, productId);
+        req.session.cartLength = cart.getItems().length
+
         req.session.cart = cart;
         res.redirect('/cart');
     });
@@ -53,8 +57,10 @@ router.get('/remove/:id', function(req, res, next) {
     var productId = req.params.id;
     var cart = new Cart(req.session.cart ? req.session.cart : {});
 
+
     cart.remove(productId);
     req.session.cart = cart;
+    req.session.cartLength = cart.getItems().length
     res.status(200).json({ "success": true })
 });
 
