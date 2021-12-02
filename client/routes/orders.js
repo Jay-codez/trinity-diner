@@ -5,6 +5,7 @@ const { findAll } = require("../controllers/orders");
 router.get("/api/getOrders", async(req, res) => {
     const data = await findAll(req, res);
 
+    console.log(data)
     res.status(200).json(JSON.stringify(data));
 });
 

@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
 
 
-async function sendMail(receiver) {
+async function sendMail(receiver, firstname) {
 
     // create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
@@ -18,8 +18,34 @@ async function sendMail(receiver) {
     let info = await transporter.sendMail({
         from: "capstonetest771@gmail.com", // sender address
         to: receiver, // list of receivers
-        subject: "Thank You For Your Order", // Subject line
-        text: "Your order has been placed!", // plain text body
+        subject: "Thank You For Your Order " + firstname, // Subject line
+        text: "Dear " + firstname + ", your order has been placed. Thank you for your service!", // plain text body
+        //html: "<b>Hello world?</b>", // html body
+    });
+
+    console.log("Message sent: %s", info.messageId);
+}
+
+//feedback
+async function feedbackMail(receiver, firstname, message) {
+
+    // create reusable transporter object using the default SMTP transport
+    let transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 587,
+        secure: false, // true for 465, false for other ports
+        auth: {
+            user: "capstonetest771@gmail.com", // generated ethereal user
+            pass: "!!capstone2021", // generated ethereal password
+        },
+    });
+
+    // send mail with defined transport object
+    let info = await transporter.sendMail({
+        from: "capstonetest771@gmail.com", // sender address
+        to: receiver, // list of receivers
+        subject: "Thank You For Feedback " + firstname, // Subject line
+        text: message, // plain text body
         //html: "<b>Hello world?</b>", // html body
     });
 
@@ -27,4 +53,4 @@ async function sendMail(receiver) {
 }
 
 
-module.exports = { sendMail }
+module.exports = { sendMail, feedbackMail }

@@ -16,6 +16,8 @@ const {
     findByCategory,
 } = require("./controllers/food-item");
 
+const invoicesRouter = require('./routes/invoices');
+
 require("dotenv/config");
 
 const cors = require('cors');
@@ -110,6 +112,7 @@ app.use(checkoutRouter);
 app.use("/food-item", fooditemRouter);
 app.use("/cart", cartRouter);
 app.use("/orders", ordersRouter)
+app.use('/invoices', invoicesRouter);
 
 
 /* const multer = require("multer");

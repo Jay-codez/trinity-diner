@@ -40,8 +40,10 @@
                                                                     <label class="badge badge-success">$<%=parseFloat(orderItem.cart.totalPrice).toFixed(2)%></label
                         >
                       </td>
+                      <%if(orderItem.cart.date) {%>
                       <td><%=orderItem.cart.date.substring(0,15)%></td>
                       <td><%=orderItem.cart.date.substring(16,25)%></td>
+                      <%}%>
                     </tr>
                     <% })%> <%}%>
                   </tbody>

@@ -44,8 +44,9 @@
                                                         <%orders.forEach((orderItem)=>{%>
                                                             <tr>
                                                                 <td>
-                                                                    <%=orderItem._id.slice(0,6)%>
-                                                                        <!-- <%=parseInt((orderItem._id).valueOf(), 11)%>-->
+                                                                    <%=parseInt((orderItem._id).valueOf(), 11)%>
+
+                                                                        <!--<%=orderItem._id.slice(0,6)%> -->
                                                                 </td>
                                                                 <td>
                                                                     <%=orderItem.currentUser.firstname%>
@@ -69,8 +70,10 @@
                           />
                         </fieldset>
                       </td>
+                      <%if(orderItem.cart.date) {%>
                       <td><%=orderItem.cart.date.substring(0,15)%></td>
                       <td><%=orderItem.cart.date.substring(16,25)%></td>
+                      <%}%>
                     </tr>
 
                     <% })%> <%}%>

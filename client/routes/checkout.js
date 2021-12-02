@@ -21,7 +21,7 @@ router.get("/checkout", async(req, res) => {
             totalPrice: 0,
         }
 
-        await sendMail(req.session.current_user.username);
+        await sendMail(req.session.current_user.username, req.session.current_user.firstname);
 
         let cart = new Cart(temp);
         req.session.cart = cart;
