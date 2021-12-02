@@ -6,7 +6,7 @@ const FoodItem = require("../models/food-item")
 const User = require("../models/user")
 
 
-const emailControl = require("../controllers/email");
+const Email = require("../controllers/email");
 
 
 router.get('/', function(req, res, next) {
@@ -23,7 +23,7 @@ router.get('/', function(req, res, next) {
         req.session.cartLength = cart.getItems().length
         console.log(req.session.cart)
             //console.log("CART ITEMS" + JSON.stringify(cart.getItems()))
-        res.render('cart', { title: 'Cart', cartItems: cart.getItems(), totalPrice: cart.totalPrice, loginUserInfo: loginUser, userData: userdata });
+        res.render('cart', { title: 'Cart', cartItems: cart.getItems(), totalPrice: cart.totalPrice, loginUserInfo: loginUser, userData: userdata, date: Date() });
     });
 })
 

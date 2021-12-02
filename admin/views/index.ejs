@@ -1,6 +1,6 @@
 <%- include("./partials/nav.ejs") %>
     <%- include("./partials/head.ejs") %>
-        <div class="container-scroller">
+        <div class="container-scroller" id="order-status">
             <!-- partial:partials/_navbar.html -->
 
             <!-- partial -->
@@ -31,9 +31,12 @@
                                             <table class="table">
                                                 <thead>
                                                     <tr>
-                                                        <th>Order No.</th>
+                                                        <th>Order #</th>
                                                         <th>Customer Name</th>
                                                         <th>Total Charge</th>
+                                                        <th>Accept/Reject</th>
+                                                        <th>Date</th>
+                                                        <th>Time</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -41,7 +44,8 @@
                                                         <%orders.forEach((orderItem)=>{%>
                                                             <tr>
                                                                 <td>
-                                                                    <%=parseInt((orderItem._id).valueOf(), 11)%>
+                                                                    <%=orderItem._id.slice(0,6)%>
+                                                                        <!-- <%=parseInt((orderItem._id).valueOf(), 11)%>-->
                                                                 </td>
                                                                 <td>
                                                                     <%=orderItem.currentUser.firstname%>
@@ -51,7 +55,24 @@
                                                                     <label class="badge badge-success">$<%=parseFloat(orderItem.cart.totalPrice).toFixed(2)%></label
                         >
                       </td>
+                      <td>
+                        <fieldset>
+                          <input
+                            type="button"
+                            value="Accept"
+                            onclick="alert('Order Accepted!')"
+                          />/
+                          <input
+                            type="button"
+                            value="Reject"
+                            onclick="alert('Order Rejected!')"
+                          />
+                        </fieldset>
+                      </td>
+                      <td><%=orderItem.cart.date.substring(0,15)%></td>
+                      <td><%=orderItem.cart.date.substring(16,25)%></td>
                     </tr>
+
                     <% })%> <%}%>
                   </tbody>
                 </table>

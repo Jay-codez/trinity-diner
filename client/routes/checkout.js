@@ -2,6 +2,8 @@ const router = require("express").Router();
 const { saveOrder } = require("../controllers/orders");
 const Cart = require("../controllers/cart")
 
+const { sendMail } = require("../controllers/email");
+
 router.get("/checkout", async(req, res) => {
     //create order
     const body = {
@@ -19,6 +21,7 @@ router.get("/checkout", async(req, res) => {
             totalPrice: 0,
         }
 
+        await sendMail(req.session.current_user.username);
 
         let cart = new Cart(temp);
         req.session.cart = cart;
