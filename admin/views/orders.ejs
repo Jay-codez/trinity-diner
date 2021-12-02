@@ -28,12 +28,14 @@
                                                         <%orders.forEach((orderItem)=>{%>
                                                             <tr>
                                                                 <td>
-                                                                    <%=orderItem.currentUser.firstname%>
+                                                                    <%=parseInt((orderItem._id).valueOf(), 11)%>
                                                                 </td>
-                                                                <td>005</td>
-
                                                                 <td>
-                                                                    <label class="badge badge-success">$<%=orderItem.cart.items.totalPrice%></label
+                                                                    <%=orderItem.currentUser.firstname%>
+                                                                        <%=orderItem.currentUser.lastname%>
+                                                                </td>
+                                                                <td>
+                                                                    <label class="badge badge-success">$<%=parseFloat(orderItem.cart.totalPrice).toFixed(2)%></label
                         >
                       </td>
                     </tr>

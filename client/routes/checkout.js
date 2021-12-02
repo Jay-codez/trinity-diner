@@ -25,7 +25,7 @@ router.get("/checkout", async(req, res) => {
         req.session.cartLength = 0;
 
 
-        res.render("checkout", { title: "Check Out" });
+        res.render("checkout", { title: "Check Out", orders: results });
     } else {
         res.redirect("/cart")
     }

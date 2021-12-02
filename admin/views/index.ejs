@@ -36,46 +36,53 @@
                                                         <th>Total Charge</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody></tbody>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>005</td>
-                                                        <td>Name</td>
-
-                                                        <td>
-                                                            <label class="badge badge-success">$</label>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- content-wrapper ends -->
-                        <!-- partial:partials/_footer.html -->
-                        <%- include("./partials/foot.ejs") %>
-                            <!-- partial -->
-                    </div>
-                    <!-- main-panel ends -->
+                                                    <%if(orders) {%>
+                                                        <%orders.forEach((orderItem)=>{%>
+                                                            <tr>
+                                                                <td>
+                                                                    <%=parseInt((orderItem._id).valueOf(), 11)%>
+                                                                </td>
+                                                                <td>
+                                                                    <%=orderItem.currentUser.firstname%>
+                                                                        <%=orderItem.currentUser.lastname%>
+                                                                </td>
+                                                                <td>
+                                                                    <label class="badge badge-success">$<%=parseFloat(orderItem.cart.totalPrice).toFixed(2)%></label
+                        >
+                      </td>
+                    </tr>
+                    <% })%> <%}%>
+                  </tbody>
+                </table>
+              </div>
             </div>
-            <!-- page-body-wrapper ends -->
+          </div>
         </div>
-        <!-- container-scroller -->
-        <!-- plugins:js -->
-        <script src="/vendors/js/vendor.bundle.base.js"></script>
-        <!-- endinject -->
-        <!-- Plugin js for this page -->
-        <script src="/vendors/chart.js/Chart.min.js"></script>
-        <script src="/vendors/moment/moment.min.js"></script>
-        <script src="/vendors/daterangepicker/daterangepicker.js"></script>
-        <script src="/vendors/chartist/chartist.min.js"></script>
-        <!-- End plugin js for this page -->
-        <!-- inject:js -->
-        <script src="/js/off-canvas.js"></script>
-        <script src="/js/misc.js"></script>
-        <!-- endinject -->
-        <!-- Custom js for this page -->
-        <script src="/js/dashboard.js"></script>
-        <!-- End custom js for this page -->
+      </div>
+      <!-- content-wrapper ends -->
+      <!-- partial:partials/_footer.html -->
+      <%- include("./partials/foot.ejs") %>
+      <!-- partial -->
+    </div>
+    <!-- main-panel ends -->
+  </div>
+  <!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+<!-- plugins:js -->
+<script src="/vendors/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<script src="/vendors/chart.js/Chart.min.js"></script>
+<script src="/vendors/moment/moment.min.js"></script>
+<script src="/vendors/daterangepicker/daterangepicker.js"></script>
+<script src="/vendors/chartist/chartist.min.js"></script>
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="/js/off-canvas.js"></script>
+<script src="/js/misc.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page -->
+<script src="/js/dashboard.js"></script>
+<!-- End custom js for this page -->
